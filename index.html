@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agentic Consensus | Governable Consensus Layer for Human-AI Coding Collaboration</title>
+    <meta
+      name="description"
+      content="Agentic Consensus argues that scalable human-AI coding collaboration requires a governable consensus layer: an auditable typed property graph that links intent, artifacts, and evidence."
+    />
+    <meta
+      name="keywords"
+      content="Agentic Consensus, human-AI coding collaboration, vibe coding, consensus layer, software engineering, knowledge representation, agentic AI, KDD 2026, AI coding agents"
+    />
+    <meta name="author" content="Tianfu Wang, Zhezheng Hao, Yin Wu, Wei Wu, Qiang Lin, Hande Dong, Nicholas Jing Yuan, Hui Xiong" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#2867ff" />
+    <link rel="canonical" href="https://tianfuwang.tech/agentic-consensus/" />
+    <link rel="icon" href="./assets/agentic-consensus-logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/agentic-consensus-icon-192.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="alternate" type="application/pdf" title="Agentic Consensus paper PDF" href="./assets/agentic-consensus-paper.pdf" />
+    <link rel="alternate" type="text/plain" title="AI-readable Agentic Consensus summary" href="./llms.txt" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="./styles.css" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Agentic Consensus" />
+    <meta property="og:title" content="Agentic Consensus | Governable Consensus Layer for Human-AI Coding Collaboration" />
+    <meta
+      property="og:description"
+      content="A KDD 2026 Blue Sky paper arguing that AI coding needs a structured consensus layer C linking human intent, executable artifacts, and evidence."
+    />
+    <meta property="og:url" content="https://tianfuwang.tech/agentic-consensus/" />
+    <meta property="og:image" content="https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Agentic Consensus paper project logo and title" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agentic Consensus | Governable Consensus Layer" />
+    <meta
+      name="twitter:description"
+      content="From vibe coding opacity to a governable consensus layer for auditable human-AI software engineering."
+    />
+    <meta name="twitter:image" content="https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-og.png" />
+
+    <meta name="citation_title" content="Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer" />
+    <meta name="citation_author" content="Wang, Tianfu" />
+    <meta name="citation_author" content="Hao, Zhezheng" />
+    <meta name="citation_author" content="Wu, Yin" />
+    <meta name="citation_author" content="Wu, Wei" />
+    <meta name="citation_author" content="Lin, Qiang" />
+    <meta name="citation_author" content="Dong, Hande" />
+    <meta name="citation_author" content="Yuan, Nicholas Jing" />
+    <meta name="citation_author" content="Xiong, Hui" />
+    <meta name="citation_publication_date" content="2026" />
+    <meta name="citation_conference_title" content="KDD 2026 Blue Sky Track" />
+    <meta name="citation_fulltext_html_url" content="https://tianfuwang.tech/agentic-consensus/" />
+    <meta name="citation_pdf_url" content="https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-paper.pdf" />
+    <meta name="citation_keywords" content="knowledge representation; software engineering; human-AI collaboration; agentic AI; vibe coding" />
+    <meta name="DC.title" content="Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer" />
+    <meta name="DC.creator" content="Tianfu Wang; Zhezheng Hao; Yin Wu; Wei Wu; Qiang Lin; Hande Dong; Nicholas Jing Yuan; Hui Xiong" />
+    <meta name="DC.description" content="A KDD 2026 Blue Sky paper proposing Agentic Consensus, a governable consensus layer for auditable human-AI coding collaboration." />
+    <meta name="DC.identifier" content="https://tianfuwang.tech/agentic-consensus/" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.type" content="Text" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://tianfuwang.tech/agentic-consensus/#webpage",
+            "url": "https://tianfuwang.tech/agentic-consensus/",
+            "name": "Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer",
+            "description": "Project page for Agentic Consensus, a KDD 2026 Blue Sky paper on governable consensus layers for human-AI coding collaboration.",
+            "inLanguage": "en",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-og.png",
+              "width": 1200,
+              "height": 630
+            },
+            "mainEntity": {
+              "@id": "https://tianfuwang.tech/agentic-consensus/#paper"
+            }
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://tianfuwang.tech/agentic-consensus/#paper",
+            "headline": "Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer",
+            "name": "Agentic Consensus",
+            "description": "Agentic Consensus reframes AI-assisted software engineering around a governable consensus layer C that links intent, artifacts, and evidence.",
+            "abstract": "Vibe coding produces executable code at speed but leaves no durable record of structural commitments, dependencies, or evidence. Agentic Consensus proposes a consensus layer C, represented as a typed property graph, as the primary engineering artifact from which executable artifacts are derived and rehydrated through synchronization operators Phi and Psi.",
+            "datePublished": "2026",
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "url": "https://tianfuwang.tech/agentic-consensus/",
+            "sameAs": [
+              "https://github.com/GeminiLight/agentic-consensus"
+            ],
+            "image": "https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-og.png",
+            "thumbnailUrl": "https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-logo.svg",
+            "mainEntityOfPage": {
+              "@id": "https://tianfuwang.tech/agentic-consensus/#webpage"
+            },
+            "encoding": {
+              "@type": "MediaObject",
+              "contentUrl": "https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-paper.pdf",
+              "encodingFormat": "application/pdf"
+            },
+            "author": [
+              { "@type": "Person", "name": "Tianfu Wang", "affiliation": "HKUST (GZ)" },
+              { "@type": "Person", "name": "Zhezheng Hao", "affiliation": "Zhejiang University" },
+              { "@type": "Person", "name": "Yin Wu", "affiliation": "HKUST (GZ)" },
+              { "@type": "Person", "name": "Wei Wu", "affiliation": "USTC" },
+              { "@type": "Person", "name": "Qiang Lin", "affiliation": "Tencent" },
+              { "@type": "Person", "name": "Hande Dong", "affiliation": "Tencent" },
+              { "@type": "Person", "name": "Nicholas Jing Yuan", "affiliation": "HKUST (GZ)" },
+              { "@type": "Person", "name": "Hui Xiong", "affiliation": "HKUST (GZ)" }
+            ],
+            "keywords": [
+              "knowledge representation",
+              "software engineering",
+              "human-AI collaboration",
+              "agentic AI",
+              "vibe coding",
+              "typed property graph"
+            ],
+            "about": [
+              "Human-AI coding collaboration",
+              "Software engineering governance",
+              "Knowledge representation",
+              "AI coding agents"
+            ]
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://tianfuwang.tech/agentic-consensus/#code",
+            "name": "Agentic Consensus",
+            "codeRepository": "https://github.com/GeminiLight/agentic-consensus",
+            "programmingLanguage": ["HTML", "CSS", "LaTeX"],
+            "applicationCategory": "ResearchProject"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://tianfuwang.tech/agentic-consensus/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Agentic Consensus?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Agentic Consensus is a proposed software-engineering paradigm in which a governable consensus layer C acts as the primary artifact for human-AI coding collaboration."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What problem does it address?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It addresses the representation gap created by vibe coding, where generated code may execute correctly but the structural commitments, dependencies, assumptions, and evidence behind the change remain implicit."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-elevate>
+      <a class="brand" href="#top" aria-label="Agentic Consensus home">
+        <img class="brand-mark" src="./assets/agentic-consensus-logo.svg" alt="" aria-hidden="true" />
+        <span>Agentic Consensus</span>
+      </a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="#layer">Layer C</a>
+        <a href="#cases">Cases</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#resources">Resources</a>
+      </nav>
+      <a class="nav-cta" href="./assets/agentic-consensus-paper.pdf">Paper PDF</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-headline reveal">
+          <p class="paper-kicker">KDD 2026 Blue Sky Track</p>
+          <h1 id="hero-title">
+            <span>Scaling Human-AI Coding Collaboration</span>
+            <span>Requires a Governable Consensus Layer</span>
+          </h1>
+          <p class="paper-authors">
+            Tianfu Wang<sup>1</sup>, Zhezheng Hao<sup>2</sup>, Yin Wu<sup>1</sup>, Wei Wu<sup>3</sup>,
+            Qiang Lin<sup>4</sup>, Hande Dong<sup>4</sup>, Nicholas Jing Yuan<sup>1</sup>, Hui Xiong<sup>1</sup>
+          </p>
+          <p class="paper-affiliations">
+            <sup>1</sup>HKUST (GZ) &nbsp; <sup>2</sup>Zhejiang University &nbsp;
+            <sup>3</sup>USTC &nbsp; <sup>4</sup>Tencent
+          </p>
+        </div>
+
+        <div class="hero-body">
+          <div class="hero-copy reveal">
+            <p class="hero-subtitle">
+              Agentic Consensus reframes AI-assisted software engineering around a governable layer
+              <strong>C</strong>: a typed, auditable world model that keeps intent, executable artifacts,
+              and evidence in correspondence.
+            </p>
+            <div class="hero-actions" aria-label="Project actions">
+              <a class="button button-primary" href="./assets/agentic-consensus-paper.pdf">Read paper</a>
+              <a class="button button-secondary" href="https://github.com/GeminiLight/agentic-consensus">Repository</a>
+              <button class="button button-ghost" type="button" data-copy-bib>Copy BibTeX</button>
+            </div>
+            <dl class="hero-metrics" aria-label="Core conceptual claims">
+              <div>
+                <dt>C</dt>
+                <dd>consensus layer</dd>
+              </div>
+              <div>
+                <dt>Phi / Psi</dt>
+                <dd>round-trip sync</dd>
+              </div>
+              <div>
+                <dt>E</dt>
+                <dd>linked evidence</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="consensus-console reveal" aria-label="Agentic Consensus diagram">
+            <div class="console-top">
+              <span>consensus / governable-layer.c</span>
+              <span>H(C|I): high</span>
+            </div>
+            <div class="graph-stage">
+              <div class="graph-node node-intent">Intent I</div>
+              <div class="graph-node node-consensus">Consensus Layer C</div>
+              <div class="graph-node node-artifact">Artifacts A</div>
+              <div class="graph-node node-evidence">Evidence E</div>
+              <svg class="graph-lines" viewBox="0 0 640 360" aria-hidden="true">
+                <path d="M132 90 C226 72 276 98 320 164" />
+                <path d="M320 164 C412 102 480 84 542 96" />
+                <path d="M542 96 C500 202 438 252 328 266" />
+                <path d="M328 266 C242 246 180 194 132 90" />
+                <path class="dashed" d="M542 96 C470 170 400 178 320 164" />
+              </svg>
+              <div class="audit-strip">
+                <span>schema: typed graph</span>
+                <span>contracts: explicit</span>
+                <span>evidence: linked</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section thesis-band" aria-labelledby="thesis-title">
+        <div class="section-header section-header-centered reveal">
+          <p class="section-kicker">Thesis</p>
+          <h2 id="thesis-title">The bottleneck is no longer generation. It is control.</h2>
+          <p>
+            Vibe coding can produce executable code quickly, but it leaves structural commitments implicit.
+            As agent throughput scales, reviewers need a primary artifact that records assumptions,
+            dependencies, invariants, and evidence before they approve changes.
+          </p>
+        </div>
+      </section>
+
+      <section class="section abstract-section" id="abstract" aria-labelledby="abstract-title">
+        <div class="section-header reveal">
+          <p class="section-kicker">Abstract</p>
+          <h2 id="abstract-title">From vibe coding opacity to auditable agreement.</h2>
+          <p>
+            Vibe coding produces correct, executable code at speed, but leaves no record of the structural
+            commitments, dependencies, or evidence behind it. This is not a generation failure but a control
+            failure: code plus chat history performs dimension collapse, flattening complex system topology
+            into low-dimensional text. Agentic Consensus proposes the consensus layer C as an operable world
+            model represented as a typed property graph. Executable artifacts are derived from C and kept in
+            correspondence via Phi and Psi synchronization operators, while evidence links directly to
+            structural claims so commitments become auditable.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="layer" aria-labelledby="layer-title">
+        <div class="section-header section-header-centered reveal">
+          <p class="section-kicker">Consensus layer C</p>
+          <h2 id="layer-title">A primary artifact for engineering agreement.</h2>
+          <p>
+            C is not documentation after the fact. It is the coordination surface where humans and agents
+            negotiate structure, realize artifacts, rehydrate changes, and attach validation evidence.
+          </p>
+        </div>
+        <div class="method-grid">
+          <article class="method-card reveal">
+            <span class="card-index">01</span>
+            <h3>Intent becomes structure</h3>
+            <p>Partial human intent is encoded into typed claims about modules, data, contracts, and invariants.</p>
+          </article>
+          <article class="method-card reveal">
+            <span class="card-index">02</span>
+            <h3>Artifacts derive from C</h3>
+            <p>Phi realizes consensus changes into code, configuration, dataflows, and other executable artifacts.</p>
+          </article>
+          <article class="method-card reveal">
+            <span class="card-index">03</span>
+            <h3>Evidence attaches to claims</h3>
+            <p>Tests, traces, provenance, and validation jobs link to the specific structural commitments they support.</p>
+          </article>
+          <article class="method-card reveal">
+            <span class="card-index">04</span>
+            <h3>Drift is monitored</h3>
+            <p>Psi rehydrates artifact changes back into C, making structural drift and uncertainty visible.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section figure-section" id="cases" aria-labelledby="cases-title">
+        <div class="section-header section-header-centered reveal">
+          <p class="section-kicker">Case studies</p>
+          <h2 id="cases-title">Two failures where code looked correct, but structure was wrong.</h2>
+          <p>
+            The paper contrasts vibe coding with Agentic Consensus in ML training degradation and A/B
+            experiment leakage. Both failures are structural, not generative.
+          </p>
+        </div>
+        <figure class="wide-figure reveal">
+          <img src="./assets/figure-cases.webp" alt="Two case studies contrasting vibe coding with Agentic Consensus for ML pipeline degradation and A/B experiment leakage" loading="lazy" />
+          <figcaption>Agentic Consensus exposes lineage, causal contracts, evidence, and rollback-relevant state that chat-driven coding leaves implicit.</figcaption>
+        </figure>
+        <div class="case-grid">
+          <figure class="case-card reveal">
+            <img src="./assets/figure-a-microservice.webp" alt="Microservice API upgrade case comparing vibe coding with consensus layer service dependencies" loading="lazy" />
+            <figcaption>Microservice API upgrade: downstream service dependencies become explicit before rollout.</figcaption>
+          </figure>
+          <figure class="case-card reveal">
+            <img src="./assets/figure-b-ml-pipeline.webp" alt="ML training pipeline case showing feature drift diagnosis through consensus lineage" loading="lazy" />
+            <figcaption>ML pipeline degradation: lineage and evidence collapse uncertainty to a root cause.</figcaption>
+          </figure>
+          <figure class="case-card reveal">
+            <img src="./assets/figure-c-ab-experiment.webp" alt="A/B experiment feature leakage case showing a parity contract blocked before inference" loading="lazy" />
+            <figcaption>A/B experiment leakage: a structural parity contract blocks a causally invalid lift.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section evaluation-section" id="evaluation" aria-labelledby="evaluation-title">
+        <div class="section-header reveal">
+          <p class="section-kicker">Evaluation framework</p>
+          <h2 id="evaluation-title">Measure alignment and control, not just code correctness.</h2>
+        </div>
+        <div class="eval-grid">
+          <article class="eval-card reveal">
+            <h3>Alignment fidelity</h3>
+            <p>Does C make intent explicit at the right abstraction level and help reviewers predict downstream consequences?</p>
+          </article>
+          <article class="eval-card reveal">
+            <h3>Consensus entropy</h3>
+            <p>How much structural ambiguity remains given current intent, and when should execution switch to clarification?</p>
+          </article>
+          <article class="eval-card reveal">
+            <h3>Intervention distance</h3>
+            <p>How many human corrections are needed to reach a correct consensus state compared with chat-driven baselines?</p>
+          </article>
+          <article class="eval-card reveal">
+            <h3>Cognitive load</h3>
+            <p>Do humans understand systems faster through C than by reading raw code, configs, and chat history?</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section resources-section" id="resources" aria-labelledby="resources-title">
+        <div class="resource-card reveal">
+          <div>
+            <p class="section-kicker">Resources</p>
+            <h2 id="resources-title">Paper, repository, citation, and AI-readable context.</h2>
+            <p>
+              Use the PDF for the submitted paper, the repository for source and updates, and llms.txt for
+              structured project context that AI research assistants can parse directly.
+            </p>
+          </div>
+          <div class="resource-actions">
+            <a class="button button-primary" href="./assets/agentic-consensus-paper.pdf">Paper PDF</a>
+            <a class="button button-secondary" href="https://github.com/GeminiLight/agentic-consensus">Open repository</a>
+            <a class="button button-secondary" href="./llms.txt">Read llms.txt</a>
+          </div>
+        </div>
+        <div class="citation-block reveal">
+          <div class="citation-header">
+            <h3>BibTeX</h3>
+            <button class="small-button" type="button" data-copy-bib>Copy</button>
+          </div>
+          <pre><code id="bibtex">@misc{wang2026agenticconsensus,
+  title = {Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer},
+  author = {Wang, Tianfu and Hao, Zhezheng and Wu, Yin and Wu, Wei and Lin, Qiang and Dong, Hande and Yuan, Nicholas Jing and Xiong, Hui},
+  year = {2026},
+  note = {Submitted to KDD 2026 Blue Sky Track}
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-header section-header-centered reveal">
+          <p class="section-kicker">FAQ</p>
+          <h2 id="faq-title">Quick answers for readers and AI research assistants.</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item reveal">
+            <h3>What is Agentic Consensus?</h3>
+            <p>It is a proposed paradigm where a governable consensus layer C becomes the primary artifact of AI-assisted engineering.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>What problem does it address?</h3>
+            <p>It addresses the representation gap created when generated code passes tests but hides assumptions, dependencies, and evidence.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>What is the key technical object?</h3>
+            <p>C is modeled as a typed property graph with synchronized projections, evidence links, and round-trip artifact correspondence.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast>Copied BibTeX</div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "Agentic Consensus",
+  "short_name": "Consensus",
+  "description": "A governable consensus layer for human-AI coding collaboration.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f9fc",
+  "theme_color": "#2867ff",
+  "icons": [
+    {
+      "src": "./assets/agentic-consensus-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/agentic-consensus-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
