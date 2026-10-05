@@ -2,8 +2,8 @@
 
 > Agentic Consensus is a research project on governable consensus layers for scalable human-AI coding collaboration.
 
-Canonical URL: https://tianfuwang.tech/agentic-consensus/
-Paper PDF: https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-paper.pdf
+Canonical URL: https://tianfuwang.tech/agentic-consensus-site/
+Paper PDF: https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-paper.pdf
 Code repository: https://github.com/GeminiLight/agentic-consensus
 Conference: KDD 2026 Blue Sky Track
 Language: English
@@ -63,11 +63,11 @@ A: Evaluation should measure alignment fidelity, consensus entropy, intervention
 
 ## Important Links
 
-- Project page: https://tianfuwang.tech/agentic-consensus/
-- Paper PDF: https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-paper.pdf
+- Project page: https://tianfuwang.tech/agentic-consensus-site/
+- Paper PDF: https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-paper.pdf
 - Repository: https://github.com/GeminiLight/agentic-consensus
-- Open Graph image: https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-og.png
-- Sitemap: https://tianfuwang.tech/agentic-consensus/sitemap.xml
+- Open Graph image: https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png
+- Sitemap: https://tianfuwang.tech/agentic-consensus-site/sitemap.xml
 
 ## Citation
 
