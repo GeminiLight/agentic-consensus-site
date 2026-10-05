@@ -28,4 +28,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://tianfuwang.tech/agentic-consensus/sitemap.xml
+Sitemap: https://tianfuwang.tech/agentic-consensus-site/sitemap.xml
