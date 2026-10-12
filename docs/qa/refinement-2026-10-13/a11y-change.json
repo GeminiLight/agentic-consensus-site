@@ -1,0 +1,121 @@
+{
+  "success": true,
+  "data": {
+    "axeVersion": "4.12.1",
+    "counts": {
+      "inapplicable": 36,
+      "incomplete": 1,
+      "passes": 24,
+      "violations": 0
+    },
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 13,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\">\u2193</span>",
+            "target": [
+              ".primary.button[href$=\"#walkthrough\"] > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<span class=\"eyebrow\">One change. The whole context.</span>",
+            "target": [
+              ".trace-heading > .eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"trace-index\" aria-hidden=\"true\">01</span>",
+            "target": [
+              "a[data-jump-step=\"intent\"] > .trace-index[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"trace-tag\">Agreed</span>",
+            "target": [
+              "a[data-jump-step=\"intent\"] > .trace-tag"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"trace-index\" aria-hidden=\"true\">02</span>",
+            "target": [
+              ".trace-change > .trace-index[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"trace-tag amber\">Mismatch</span>",
+            "target": [
+              ".amber"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"trace-index\" aria-hidden=\"true\">03</span>",
+            "target": [
+              "a[data-jump-step=\"evidence\"] > .trace-index[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"trace-index\" aria-hidden=\"true\">04</span>",
+            "target": [
+              ".trace-human > .trace-index[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<p class=\"trace-caption\">\n              <span class=\"status-dot\" aria-hidden=\"true\"></span>Illustrative\n              scenario <span>Explore any step \u2197</span>\n            </p>",
+            "target": [
+              ".trace-caption"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<span>Explore any step \u2197</span>",
+            "target": [
+              ".trace-caption > span:nth-child(2)"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ],
+    "lifecycle": {
+      "effectiveLaunch": {
+        "browserLaunched": true,
+        "engine": "chrome",
+        "launchHash": 11677035664275010974
+      },
+      "launched": false,
+      "relaunchedBrowser": false,
+      "restartedBackground": false,
+      "restoreStatus": "not_configured",
+      "reused": true,
+      "saveStatus": "not_attempted"
+    },
+    "url": "http://127.0.0.1:8924/",
+    "violations": []
+  },
+  "error": null
+}
