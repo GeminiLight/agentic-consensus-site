@@ -15,7 +15,7 @@ Warm paper (#f7f7f2), forest green (#173f35), and a restrained pale green accent
 - Current research summary: the newer paper's framework, without human-study findings. The website explicitly notes that an arXiv update is forthcoming. Current-project affiliations follow the newer manuscript; the public preprint retains its historical affiliations.
 - Evaluation: the proposed B0/B1/B2 comparison, clearly future work. Human-study results are omitted at the owner's request.
 - Walkthrough: a simplified capability-migration scenario, grounded in the implementation's synthetic demo and the manuscript's authority-drift trace. The code excerpt is labeled illustrative. No demo button changes a repository or admits a decision.
-- Workspace: `agentic-consensus/docs/images/refinement-workspace-en.png`. English interface with project-authored Chinese commitments is disclosed in the image description.
+- Workspace (updated 2026-10-13): `agentic-consensus/docs/qa/vercel-paper-2026-10-13/06-project-canvas.png`. Actual English-only StudyShare synthetic-demo capture: one agreed commitment, two linked files marked “Not interpreted,” and version-pinned source code. The temporary-demo notice is preserved. The recorded synthetic approval is not a human-study finding or a real participant-data release.
 - Change map / decision: recorded reviewer captures from the manuscript's `figures/` directory, labeled as actual captures. The change map's two recorded results are not described as satisfying the three evidence obligations.
 - Implementation scope: the code repository README and current source. GitHub import remains read-only, AI is advisory, Python imports are the supported automated analysis, and realization is bounded to a single import substitution.
 
