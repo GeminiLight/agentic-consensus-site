@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Agentic Consensus — Keep the project understood.</title>
+    <title>Agentic Consensus — Build with agents. Stay in control.</title>
     <meta
       name="description"
       content="A shared, versioned project state for human and AI coding collaboration. Connect intent, code, evidence, and human decisions with Agentic Consensus and Consensus Control."
@@ -50,8 +50,8 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261013" />
-    <script src="./script.js?v=20261013" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20261013-r2" />
+    <script src="./script.js?v=20261013-r2" defer></script>
     <noscript
       ><style>
         .demo-panel[hidden],
@@ -89,7 +89,7 @@
     <meta property="og:site_name" content="Agentic Consensus" />
     <meta
       property="og:title"
-      content="Agentic Consensus — Keep the project understood."
+      content="Agentic Consensus — Build with agents. Stay in control."
     />
     <meta
       property="og:description"
@@ -101,18 +101,18 @@
     />
     <meta
       property="og:image"
-      content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png?v=20261013"
+      content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png?v=20261013-r2"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Agentic Consensus: Build with agents. Keep the project understood. Intent, commitments, code, and evidence, linked by human decisions."
+      content="Agentic Consensus: Build with agents. Stay in control. Intent, commitments, code, and evidence, linked by human decisions."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Agentic Consensus — Keep the project understood."
+      content="Agentic Consensus — Build with agents. Stay in control."
     />
     <meta
       name="twitter:description"
@@ -120,7 +120,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png?v=20261013"
+      content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png?v=20261013-r2"
     />
     <meta
       name="citation_title"
@@ -247,29 +247,94 @@
             >Research &amp; open-source software / 2026</span
           >
         </div>
-        <h1 id="hero-title">
-          Build with agents.<br />Keep the project <em>understood.</em>
-        </h1>
-        <div class="hero-bottom">
-          <p class="hero-description">
-            Code evolves. Intent gets lost.
-            <strong>Agentic Consensus</strong> keeps what you meant, what
-            changed, and what you can trust in one shared project state.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#walkthrough"
-              >Explore the idea <span aria-hidden="true">↓</span></a
-            ><a class="button secondary" href="https://arxiv.org/abs/2604.17883"
-              >Read the paper <span aria-hidden="true">↗</span></a
-            >
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <h1 id="hero-title">
+              Build with agents.<br />Stay in <em>control.</em>
+            </h1>
+            <p class="hero-description">
+              See what an agent’s change means for your project. Connect the
+              intent, code, and evidence—then make the call.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#walkthrough"
+                >See how it works <span aria-hidden="true">↓</span></a
+              >
+              <a
+                class="button secondary"
+                href="https://arxiv.org/abs/2604.17883"
+                >Read the paper <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <p class="hero-definition">
+              <strong>Agentic Consensus</strong> is a shared, versioned project
+              state for humans and coding agents.
+            </p>
+          </div>
+          <div
+            class="hero-trace"
+            role="group"
+            aria-label="Illustrative review: follow a change from intent to a human decision"
+          >
+            <div class="trace-heading">
+              <span class="eyebrow">One change. The whole context.</span
+              ><span class="trace-window" aria-hidden="true">↗</span>
+            </div>
+            <div class="trace-nodes">
+              <a class="trace-node" href="#walkthrough" data-jump-step="intent">
+                <span class="trace-index" aria-hidden="true">01</span
+                ><span class="trace-content"
+                  ><small>The intent</small
+                  ><strong>Task-scoped access</strong></span
+                ><span class="trace-tag">Agreed</span
+                ><span class="trace-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="trace-node trace-change"
+                href="#walkthrough"
+                data-jump-step="change"
+              >
+                <span class="trace-index" aria-hidden="true">02</span
+                ><span class="trace-content"
+                  ><small>The agent’s change</small
+                  ><strong>Workspace-wide token</strong></span
+                ><span class="trace-tag amber">Mismatch</span
+                ><span class="trace-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="trace-node"
+                href="#walkthrough"
+                data-jump-step="evidence"
+              >
+                <span class="trace-index" aria-hidden="true">03</span
+                ><span class="trace-content"
+                  ><small>The evidence</small
+                  ><strong>Tests pass. A check is missing.</strong></span
+                ><span class="trace-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="trace-node trace-human"
+                href="#walkthrough"
+                data-jump-step="decision"
+              >
+                <span class="trace-index" aria-hidden="true">04</span
+                ><span class="trace-content"
+                  ><small>The human decision</small
+                  ><strong>Resolve the gap before approval.</strong></span
+                ><span class="trace-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <p class="trace-caption">
+              <span class="status-dot" aria-hidden="true"></span>Illustrative
+              scenario <span>Explore any step ↗</span>
+            </p>
           </div>
         </div>
         <div class="hero-footnote">
-          <span
-            >A governable consensus layer for human and AI coding
-            collaboration.</span
-          ><a href="#workspace"
-            >Meet Consensus Control <span aria-hidden="true">↘</span></a
+          <span>A governable consensus layer for human–AI coding.</span>
+          <a href="#workspace"
+            >Meet the open-source workspace
+            <span aria-hidden="true">↘</span></a
           >
         </div>
       </section>
@@ -287,8 +352,8 @@
             </h2>
           </div>
           <p>
-            A new connector works. But does it still respect the project’s
-            access policy? Follow a change from intent to a human decision.
+            A working connector quietly broadens access. Follow the mismatch
+            from the original request to the review decision.
           </p>
         </div>
         <div class="review-demo" data-tabs>
@@ -299,6 +364,7 @@
               <span>Capability migration</span></span
             ><span class="demo-label">Illustrative walkthrough</span>
           </div>
+          <div class="demo-progress" aria-hidden="true"><span></span></div>
           <div class="demo-body">
             <div
               class="demo-tabs"
@@ -314,10 +380,7 @@
                 tabindex="0"
               >
                 <span class="step-number">01</span
-                ><span
-                  >Start with intent<small
-                    >Make the commitment explicit</small
-                  ></span
+                ><span>Clarify intent<small>What did we agree?</small></span
                 ><span class="step-arrow" aria-hidden="true">↗</span>
               </button>
               <button
@@ -329,9 +392,7 @@
               >
                 <span class="step-number">02</span
                 ><span
-                  >Inspect the change<small
-                    >Connect meaning to code</small
-                  ></span
+                  >Trace the change<small>What actually changed?</small></span
                 ><span class="step-arrow" aria-hidden="true">↗</span>
               </button>
               <button
@@ -343,8 +404,8 @@
               >
                 <span class="step-number">03</span
                 ><span
-                  >Question the evidence<small
-                    >Check scope and freshness</small
+                  >Check the evidence<small
+                    >Does the proof still apply?</small
                   ></span
                 ><span class="step-arrow" aria-hidden="true">↗</span>
               </button>
@@ -357,9 +418,7 @@
               >
                 <span class="step-number">04</span
                 ><span
-                  >Keep humans in control<small
-                    >Record an accountable decision</small
-                  ></span
+                  >Make the decision<small>Who can authorize it?</small></span
                 ><span class="step-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
@@ -387,17 +446,14 @@
                   <div>
                     <span class="small-label">The shared commitment</span>
                     <h3>
-                      A connector can only use capabilities granted to its
-                      current task.
+                      Use only the capabilities granted to the current task.
                     </h3>
-                    <p>
-                      Any legacy exception needs a named scope and an expiry.
-                    </p>
+                    <p>Legacy exceptions need a scope and an expiry.</p>
                   </div>
                 </div>
                 <p class="panel-note">
-                  <span aria-hidden="true">↳</span> Preserve the selected
-                  meaning, alternatives, and who agreed.
+                  <span aria-hidden="true">↳</span> Keep the interpretation and
+                  who agreed on record.
                 </p>
               </section>
               <section
@@ -437,9 +493,8 @@
                   ><span aria-hidden="true">≠</span><span>Task scope</span>
                 </div>
                 <p class="panel-note">
-                  Trace the changed dependency back to the commitment it may
-                  violate. Dynamic credential resolution can remain
-                  unobservable.
+                  The new dependency may violate task scope. Dynamic credential
+                  resolution can remain unobservable.
                 </p>
               </section>
               <section
@@ -455,7 +510,7 @@
                   ><span class="pill warning">Coverage gap</span>
                 </div>
                 <h3 class="panel-title">
-                  A result is only useful<br />if it covers this change.
+                  Passing tests.<br />Unanswered questions.
                 </h3>
                 <div class="evidence-list">
                   <div>
@@ -480,9 +535,8 @@
                   </div>
                 </div>
                 <p class="panel-note">
-                  Passing, current, and sufficient are different questions.
-                  Evidence stays attached to the claim and artifact version it
-                  actually covers.
+                  Evidence must support this claim, on this version—not just
+                  show a passing result.
                 </p>
               </section>
               <section
@@ -498,15 +552,15 @@
                   ><span class="pill warning">Admission blocked</span>
                 </div>
                 <h3 class="panel-title">
-                  The agent can propose.<br />The reviewer holds the decision.
+                  Agents propose.<br />Humans authorize.
                 </h3>
                 <div class="decision-reason">
                   <span class="decision-icon" aria-hidden="true">!</span>
                   <div>
                     <b>Not ready to approve</b>
                     <p>
-                      The access-policy question is unresolved and current
-                      evidence is missing.
+                      Resolve the access-policy mismatch and supply current
+                      evidence.
                     </p>
                   </div>
                 </div>
@@ -527,13 +581,13 @@
               ><i class="status-dot" aria-hidden="true"></i>Shared state.
               Traceable evidence. Human authority.</span
             ><button type="button" class="next-step" data-next-step>
-              Next: inspect the change <span aria-hidden="true">→</span>
+              Next: trace the change <span aria-hidden="true">→</span>
             </button>
           </div>
         </div>
         <p class="figure-note">
-          A simplified walkthrough of the capability-migration scenario. These
-          are illustrative states, not a live repository or a measured result.
+          Illustrative capability-migration scenario. No live repository actions
+          or measured results.
         </p>
       </section>
 
@@ -545,12 +599,11 @@
         <div class="section-heading">
           <p class="eyebrow">02 / The consensus layer</p>
           <h2 id="concept-title">
-            A shared understanding.<br /><em>With a version history.</em>
+            Keep the context.<br /><em>Across every change.</em>
           </h2>
           <p>
-            Each proposal changes a project state. The consensus layer keeps
-            four parts connected, so a reviewer can see what the change means
-            before authorizing it.
+            Prompts get buried. Code keeps changing. A shared project state
+            preserves the decisions that connect them.
           </p>
         </div>
         <div
@@ -562,10 +615,7 @@
             <span class="state-symbol">I<sup>t</sup></span>
             <div>
               <h3>Intent</h3>
-              <p>
-                What was asked, what was ambiguous, and which interpretation was
-                selected.
-              </p>
+              <p>The request and its agreed interpretation.</p>
             </div>
             <span class="state-verb">Clarify</span>
           </article>
@@ -573,10 +623,7 @@
             <span class="state-symbol">C<sup>t</sup></span>
             <div>
               <h3>Commitments</h3>
-              <p>
-                The interfaces, dependencies, and rules the project has agreed
-                to preserve.
-              </p>
+              <p>The interfaces, dependencies, and rules to preserve.</p>
             </div>
             <span class="state-verb">Agree</span>
           </article>
@@ -584,10 +631,7 @@
             <span class="state-symbol">A<sup>t</sup></span>
             <div>
               <h3>Artifacts</h3>
-              <p>
-                The exact code, configuration, and revisions that implement
-                those commitments.
-              </p>
+              <p>The code and configuration at a specific revision.</p>
             </div>
             <span class="state-verb">Inspect</span>
           </article>
@@ -595,10 +639,7 @@
             <span class="state-symbol">E<sup>t</sup></span>
             <div>
               <h3>Evidence</h3>
-              <p>
-                What was checked, what it supports, and whether it still applies
-                to this version.
-              </p>
+              <p>What was checked, for which claim and version.</p>
             </div>
             <span class="state-verb">Verify</span>
           </article>
@@ -609,9 +650,9 @@
             Disagreements, uncertainty, and scoped exceptions remain visible.
           </p>
           <p>
-            Realization (Φ) links a selected change to implementation.
-            Rehydration (Ψ) reads the resulting artifacts back into the model
-            and records the gaps.
+            <strong>Context travels both ways.</strong> Agreed changes guide
+            implementation; changed artifacts reveal conflicts and stale
+            evidence.
           </p>
         </div>
       </section>
@@ -628,9 +669,8 @@
               <h2 id="workspace-title">Meet <em>Consensus Control.</em></h2>
             </div>
             <p>
-              A local-first review workspace for agent-submitted changes. Start
-              with the commitment, inspect its source, and see which evidence is
-              still needed.
+              The open-source review workspace. Inspect a commitment, follow it
+              into the code, and see what still needs evidence.
             </p>
           </div>
           <div class="workspace-showcase" data-tabs>
@@ -666,7 +706,7 @@
                   Decision brief
                 </button>
               </div>
-              <span class="capture-label">Development workspace captures</span>
+              <span class="capture-label">Actual workspace captures</span>
             </div>
             <div
               id="screen-commitments"
@@ -687,12 +727,12 @@
                   height="1000"
                   alt="Consensus Control connects a proposed question-reset commitment to three version-pinned source readings. The interface is English; the project's authored commitments are in Chinese."
                   loading="lazy"
-                /><span class="image-expand">View full size ↗</span></a
+                /><span class="image-expand">Enlarge image ⤢</span></a
               >
               <p class="screen-caption">
-                <b>Read the meaning alongside the implementation.</b> Authored
-                readings point to version-pinned source code. They remain
-                separate from behavioral verification.
+                <b>Meaning, linked to source.</b> Read a commitment beside the
+                exact code version. Source readings are not behavioral
+                verification.
               </p>
             </div>
             <div
@@ -715,12 +755,11 @@
                   height="1698"
                   alt="A real review change map groups 17 files by directory, with evidence records and tests marked not run. Tile area represents changed lines, not risk."
                   loading="lazy"
-                /><span class="image-expand">View full size ↗</span></a
+                /><span class="image-expand">Enlarge image ⤢</span></a
               >
               <p class="screen-caption">
-                <b>Get the shape of a change before opening each file.</b> Tile
-                area represents changed lines, not risk. Recorded evidence and
-                missing checks stay distinguishable.
+                <b>See the shape of a change.</b> Tile size shows changed lines,
+                not risk. Evidence gaps remain visible.
               </p>
             </div>
             <div
@@ -747,24 +786,23 @@
                     loading="lazy"
                 /></a>
                 <p>
-                  Three linked claims. Three unmet evidence obligations. The
-                  recorded walkthrough keeps approval disabled until the
-                  requirements are resolved.
+                  Three claims still need evidence. Approval stays blocked until
+                  the requirements are resolved.
                 </p>
               </div>
               <p class="screen-caption">
-                <b>See what prevents approval, and what to inspect next.</b> A
-                source reading or an AI answer does not grant decision
-                authority.
+                <b>Know what blocks approval.</b> An AI answer can inform a
+                decision; it cannot authorize one.
               </p>
             </div>
           </div>
           <div class="workspace-details">
             <p>
-              <strong>Runs locally.</strong> Screenshots show the current
-              development workspace. GitHub import is read-only. AI assistance
-              is optional and advisory. Python import analysis and one bounded
-              import-substitution round trip are implemented.
+              <strong
+                >Local-first. Read-only GitHub import. Optional AI.</strong
+              >
+              Captures from the development workspace. See the FAQ for
+              implementation scope.
             </p>
             <a
               class="text-link"
@@ -787,8 +825,8 @@
             <em>Governable Consensus Layer.</em>
           </h2>
           <p class="paper-position">
-            A position on how shared project state can preserve human
-            understanding and control as agent contributions accumulate.
+            Our position: more agent-written code needs a shared account of what
+            the project means—and who can change it.
           </p>
           <div class="authors">
             Tianfu Wang<sup>1</sup>, Zhezheng Hao<sup>2</sup>, Yin
@@ -813,31 +851,24 @@
             ><a class="text-link" href="#citation">Cite this work ↓</a>
           </div>
           <p class="paper-version">
-            arXiv:2604.17883 · This page reflects our current research and
-            implementation. An updated arXiv version is coming soon.
+            arXiv:2604.17883 · Updated version coming soon. This site follows
+            our newer research and implementation.
           </p>
           <details class="abstract">
             <summary>
               Current research summary <span aria-hidden="true">+</span>
             </summary>
             <p>
-              Vibe coding turns natural-language intent into working software,
-              but code generation alone does not give humans and agents a shared
-              account of what they are building. As collaboration spans
-              participants, components, and releases, design choices must remain
-              understandable and open to revision. We argue that scaling human
-              and AI coding collaboration requires a governable consensus layer.
-              <strong>Agentic Consensus</strong> organizes collaboration around
-              a versioned project-state model linking selected intent,
-              structural commitments, executable artifacts, and evidence.
-              Participants can clarify intent before implementation and
-              coordinate proposed changes against commitments that humans can
-              inspect and revise. Bidirectional synchronization connects
-              intended changes to implementation and exposes conflicts or stale
-              evidence as artifacts evolve. We implemented its review workflow
-              in Consensus Control. Our research agenda asks how shared project
-              state can preserve human understanding and control as agent
-              contributions accumulate.
+              Code records what was built. It does not, by itself, explain the
+              choices a project has agreed to preserve. Agentic Consensus links
+              intent, commitments, artifacts, and evidence in a versioned
+              project state that people and agents can inspect and revise.
+            </p>
+            <p>
+              Agreed changes guide implementation. Updated artifacts reveal
+              conflicts, gaps, and stale evidence. Consensus Control puts this
+              approach into a review workspace, with humans retaining decision
+              authority.
             </p>
           </details>
         </div>
@@ -846,35 +877,28 @@
           id="evaluation"
           aria-labelledby="study-title"
         >
-          <span class="eyebrow">The research agenda</span>
-          <h3 id="study-title">What should better review make possible?</h3>
+          <span class="eyebrow">When a diff is not enough</span>
+          <h3 id="study-title">Some changes reach beyond the file.</h3>
           <div class="research-questions">
             <div>
               <span>01</span>
-              <p>
-                <b>Understand the commitment.</b> Identify what a proposed
-                change must preserve.
-              </p>
+              <p><b>Shared interfaces</b>Will existing callers still work?</p>
             </div>
             <div>
               <span>02</span>
-              <p>
-                <b>Judge the evidence.</b> Check whether it is sufficient for
-                this artifact version.
-              </p>
+              <p><b>Authority &amp; policy</b>Who gains access or control?</p>
             </div>
             <div>
               <span>03</span>
               <p>
-                <b>Keep decisions accountable.</b> Choose a policy-compatible
-                action with the right authority.
+                <b>Evidence across versions</b>Does yesterday’s check cover
+                today’s change?
               </p>
             </div>
           </div>
           <p class="study-limit">
-            Our planned evaluation compares native review, a governance ledger,
-            and relational project-state review. Their comparative benefits
-            remain an open research question.
+            Use project-state review when commitments cross these boundaries.
+            Local edits can stay on the ordinary diff-and-test path.
           </p>
         </aside>
       </section>
@@ -884,11 +908,10 @@
           <div>
             <p class="eyebrow">05 / Try it on your machine</p>
             <h2 id="start-title">
-              From the idea<br />to <em>your review desk.</em>
+              Your project.<br /><em>Your review desk.</em>
             </h2>
             <p>
-              Start with the synthetic capability-migration scenario. Then
-              import a GitHub pull request or compare two local Git revisions.
+              Try the demo, import a GitHub PR, or compare local Git revisions.
             </p>
             <div class="requirements">
               <span>Python 3.11+</span><span>Git</span><span>uv</span>
@@ -913,6 +936,7 @@
               </button>
             </div>
             <pre
+              role="region"
               tabindex="0"
               aria-label="Local installation commands"
             ><code id="quickstart">git clone https://github.com/GeminiLight/agentic-consensus.git
@@ -940,10 +964,7 @@ uv pip install --python .venv/bin/python -e '.[dev]'
             <p class="eyebrow">06 / Go deeper</p>
             <h2 id="resources-title">One project. <em>Open paths in.</em></h2>
           </div>
-          <p>
-            Read the argument, inspect the implementation, or contribute to the
-            project.
-          </p>
+          <p>Read it. Run it. Build on it.</p>
         </div>
         <div class="resource-list">
           <a href="https://arxiv.org/abs/2604.17883"
@@ -982,10 +1003,13 @@ uv pip install --python .venv/bin/python -e '.[dev]'
               Copy BibTeX
             </button>
           </div>
-          <pre
-            tabindex="0"
-            aria-label="BibTeX citation"
-          ><code id="bibtex">@misc{wang2026scalinghumanaicodingcollaboration,
+          <details class="citation-source">
+            <summary>View BibTeX <span aria-hidden="true">+</span></summary>
+            <pre
+              role="region"
+              tabindex="0"
+              aria-label="BibTeX citation"
+            ><code id="bibtex">@misc{wang2026scalinghumanaicodingcollaboration,
   title = {Scaling Human-AI Coding Collaboration
            Requires a Governable Consensus Layer},
   author = {Wang, Tianfu and Hao, Zhezheng and Wu, Yin and Wu, Wei
@@ -997,6 +1021,7 @@ uv pip install --python .venv/bin/python -e '.[dev]'
   primaryClass = {cs.SE},
   url = {https://arxiv.org/abs/2604.17883}
 }</code></pre>
+          </details>
         </div>
       </section>
 
@@ -1013,11 +1038,9 @@ uv pip install --python .venv/bin/python -e '.[dev]'
               >
             </summary>
             <p>
-              Consensus means the currently authorized, versioned project state.
-              It can contain contested claims and scoped waivers. Human or
-              policy-defined authority determines which changes are admitted;
-              agreement between agents does not establish truth or grant
-              permission.
+              No. Consensus is the authorized project state, including
+              unresolved claims and scoped exceptions. Agent agreement alone
+              does not establish truth or grant permission.
             </p>
           </details>
           <details>
@@ -1027,10 +1050,9 @@ uv pip install --python .venv/bin/python -e '.[dev]'
               >
             </summary>
             <p>
-              It adds project-state review: which commitments a patch changes,
-              which interpretation led to it, and whether the evidence still
-              applies. Diffs, tests, and existing review practices remain useful
-              and are linked to that shared context.
+              It connects a diff to the commitments it affects, the intent
+              behind it, and the evidence that still applies. Your existing code
+              review gains a shared project context.
             </p>
           </details>
           <details>
@@ -1038,12 +1060,10 @@ uv pip install --python .venv/bin/python -e '.[dev]'
               What can I run today?<span aria-hidden="true">+</span>
             </summary>
             <p>
-              Consensus Control is an authenticated local review workspace with
-              read-only GitHub PR import, commitment and source inspection,
-              evidence requirements, and authorized decisions. Automated source
-              analysis covers Python imports. Its executable realization path is
-              bounded to a single Python import substitution; the broader
-              research agenda is not a claim of general code synthesis.
+              Consensus Control supports local review, read-only GitHub PR
+              import, source inspection, evidence requirements, and authorized
+              decisions. Automated analysis covers Python imports; executable
+              changes are currently limited to a single import substitution.
             </p>
           </details>
           <details>
@@ -1054,15 +1074,14 @@ uv pip install --python .venv/bin/python -e '.[dev]'
               >
             </summary>
             <p>
-              No. The GitHub connection is read-only. A decision updates local
-              governed project state and its audit history. It does not push
-              code or merge, create, or delete a GitHub pull request.
+              No. Approval updates local project state and its audit history.
+              The read-only GitHub connection cannot push code or merge a PR.
             </p>
           </details>
         </div>
       </section>
       <section class="closing wrap">
-        <p>More capable agents.<br /><em>More legible collaboration.</em></p>
+        <p>Move the code forward.<br /><em>Keep the meaning with it.</em></p>
         <a
           class="button primary"
           href="https://github.com/GeminiLight/agentic-consensus"
@@ -1080,6 +1099,31 @@ uv pip install --python .venv/bin/python -e '.[dev]'
         <a href="./llms.txt">Text summary</a><a href="#top">Back to top ↑</a>
       </div>
     </footer>
+    <dialog class="image-dialog" aria-labelledby="image-dialog-title">
+      <div class="image-dialog-bar">
+        <h2 id="image-dialog-title">Inside Consensus Control</h2>
+        <div>
+          <button type="button" data-image-zoom aria-pressed="false">
+            Actual size</button
+          ><button
+            type="button"
+            data-image-close
+            aria-label="Close image viewer"
+          >
+            Close <span aria-hidden="true">×</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="image-dialog-viewport"
+        role="region"
+        tabindex="0"
+        aria-label="Workspace screenshot"
+      >
+        <img alt="" />
+      </div>
+      <p class="image-dialog-caption"></p>
+    </dialog>
     <div
       class="toast"
       role="status"

@@ -1,6 +1,6 @@
 # Agentic Consensus · project website
 
-![Agentic Consensus: Build with agents. Keep the project understood.](assets/agentic-consensus-og.png)
+![Agentic Consensus: Build with agents. Stay in control.](assets/agentic-consensus-og.png)
 
 A research website for **Agentic Consensus**, a shared, versioned project state for human and AI coding collaboration, and **Consensus Control**, its local review workspace.
 
@@ -16,9 +16,9 @@ A research website for **Agentic Consensus**, a shared, versioned project state 
 
 ## What visitors can explore
 
-- A four-step capability-migration walkthrough: intent, changed code, evidence, and an authorized decision.
+- A clickable first-screen review trace and a four-step capability-migration walkthrough: intent, changed code, evidence, and an authorized decision.
 - The versioned relationship between intent, commitments, artifacts, and evidence.
-- Real workspace captures, with separate views for meaning, changes, and decisions.
+- Real workspace captures, with separate views for meaning, changes, and decisions, plus an in-page image viewer.
 - The arXiv preprint, current research agenda, local setup, and a copyable citation.
 
 The walkthrough is illustrative. The website reflects current research and implementation; the linked arXiv preprint is an earlier version, with an update forthcoming. Human-study results are intentionally omitted. The site does not imply conference acceptance or claim a measured comparative improvement.
@@ -41,7 +41,7 @@ node --check script.js
 node scripts/verify-browser.cjs http://127.0.0.1:8924
 ```
 
-The browser check covers responsive widths, the two tab groups, keyboard selection, mobile navigation, clipboard feedback and its failure path, local images, and page errors. See [the design and verification notes](docs/showcase.md) for content provenance and release details.
+The browser check covers responsive widths, both tab groups, hero shortcuts, keyboard navigation, the image viewer, clipboard success and failure, citation links, reduced motion, automated accessibility, and uncaught page errors. See [content provenance](docs/showcase.md) and [the experience refinement](docs/experience-refinement.md).
 
 ## Deployment
 

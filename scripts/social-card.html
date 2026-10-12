@@ -32,15 +32,15 @@
         width: 42px;
         height: 42px;
       }
-      .card-top > span {
+      .card-top > span:not(.brand) {
         font: 11px var(--mono);
         color: var(--muted);
         letter-spacing: 0.1em;
       }
       .card h1 {
-        font-size: 96px;
+        font-size: 83px;
         line-height: 1.04;
-        margin-top: 61px;
+        margin-top: 0;
         letter-spacing: -0.035em;
       }
       .card h1 em {
@@ -68,6 +68,41 @@
         font: 11px var(--mono);
         color: var(--muted);
       }
+      .card-body {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        align-items: center;
+        gap: 32px;
+        margin-top: 40px;
+      }
+      .card-body > .card-copy > p {
+        font-size: 18px;
+        line-height: 1.65;
+        margin-top: 22px;
+        max-width: 410px;
+      }
+      .hero-trace {
+        padding: 20px;
+      }
+      .trace-node {
+        min-height: 60px;
+        padding: 11px 14px;
+      }
+      .trace-content strong {
+        font-size: 12px;
+      }
+      .trace-nodes {
+        gap: 9px;
+      }
+      .trace-caption {
+        margin-top: 15px;
+      }
+      .trace-heading {
+        margin-bottom: 15px;
+      }
+      .trace-nodes::before {
+        animation: none;
+      }
     </style>
   </head>
   <body>
@@ -77,7 +112,48 @@
           ><img src="../assets/mark.svg" alt="" />Agentic Consensus</span
         ><span>HUMAN + AGENT COLLABORATION</span>
       </div>
-      <h1>Build with agents.<br />Keep the project <em>understood.</em></h1>
+      <div class="card-body">
+        <div class="card-copy">
+          <h1>Build with agents.<br />Stay in <em>control.</em></h1>
+          <p>Intent, code, and evidence.<br />One shared project state.</p>
+        </div>
+        <div class="hero-trace">
+          <div class="trace-heading">
+            <span class="eyebrow">One change. The whole context.</span>
+          </div>
+          <div class="trace-nodes">
+            <div class="trace-node">
+              <span class="trace-index">01</span
+              ><span class="trace-content"
+                ><small>The intent</small
+                ><strong>Task-scoped access</strong></span
+              ><span class="trace-tag">Agreed</span>
+            </div>
+            <div class="trace-node trace-change">
+              <span class="trace-index">02</span
+              ><span class="trace-content"
+                ><small>The agent’s change</small
+                ><strong>Workspace-wide token</strong></span
+              ><span class="trace-tag amber">Mismatch</span>
+            </div>
+            <div class="trace-node">
+              <span class="trace-index">03</span
+              ><span class="trace-content"
+                ><small>The evidence</small
+                ><strong>Tests pass. A check is missing.</strong></span
+              >
+            </div>
+            <div class="trace-node trace-human">
+              <span class="trace-index">04</span
+              ><span class="trace-content"
+                ><small>The human decision</small
+                ><strong>Resolve the gap before approval.</strong></span
+              >
+            </div>
+          </div>
+          <p class="trace-caption">Illustrative review</p>
+        </div>
+      </div>
       <div class="card-bottom">
         <div class="chain">
           <span>Intent</span><i>→</i><span>Commitments</span><i>→</i

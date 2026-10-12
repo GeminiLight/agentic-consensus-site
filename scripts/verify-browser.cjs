@@ -5,11 +5,38 @@ const { mkdirSync, writeFileSync } = require("node:fs");
 const { resolve } = require("node:path");
 const address = process.argv[2] || "http://127.0.0.1:8924";
 const session = "consensus-showcase-check";
-const b = (...args) =>
+const command = (...args) =>
   execFileSync("agent-browser", ["--session", session, ...args], {
     encoding: "utf8",
     maxBuffer: 8 * 1024 * 1024,
   }).trim();
+// Browser input is sent only once entrance motion and smooth scrolling have settled.
+const b = (...args) => {
+  if (["click", "focus"].includes(args[0])) {
+    command(
+      "eval",
+      `document.querySelector(${JSON.stringify(args[1])}).scrollIntoView({block:"center", behavior:"instant"}); true`,
+    );
+    command(
+      "wait",
+      "--fn",
+      '[...document.getAnimations()].every(a => a.playState !== "running")',
+    );
+    command(
+      "eval",
+      `new Promise(resolve => {
+      let previous = scrollY, stable = 0;
+      function frame() {
+        stable = previous === scrollY ? stable + 1 : 0;
+        previous = scrollY;
+        if (stable >= 6) resolve(true); else requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })`,
+    );
+  }
+  return command(...args);
+};
 const ev = (source) => JSON.parse(b("eval", source));
 const checks = [];
 const check = (name, fn) => {
@@ -17,7 +44,13 @@ const check = (name, fn) => {
   checks.push(name);
   console.log("PASS " + name);
 };
-const out = resolve(__dirname, "../docs/qa");
+const out = resolve(__dirname, "../docs/qa/refinement-2026-10-13");
+const settled = () =>
+  b(
+    "wait",
+    "--fn",
+    'document.fonts.status === "loaded" && [...document.getAnimations()].every(a => a.playState !== "running")',
+  );
 mkdirSync(out, { recursive: true });
 try {
   b("open", address);
@@ -109,6 +142,90 @@ try {
     assert.equal(ev("document.activeElement.id"), "view-map");
   });
   check(
+    "Hero trace links select the matching step, update progress, and focus the panel",
+    () => {
+      for (const [index, step] of [
+        "intent",
+        "change",
+        "evidence",
+        "decision",
+      ].entries()) {
+        b("open", address);
+        settled();
+        b("click", `[data-jump-step="${step}"]`);
+        assert.equal(
+          ev(
+            `document.querySelector('#step-${step}').getAttribute('aria-selected')`,
+          ),
+          "true",
+        );
+        assert.equal(ev("document.activeElement.id"), `panel-${step}`);
+        assert.equal(
+          ev(
+            'document.querySelector(".review-demo").style.getPropertyValue("--step-progress")',
+          ),
+          `${(index + 1) * 25}%`,
+        );
+      }
+    },
+  );
+  check(
+    "Image viewer fits, zooms, traps focus, and restores focus and scrolling on dismissal",
+    () => {
+      for (const width of [1440, 390]) {
+        b("set", "viewport", String(width), "1000");
+        b("open", address);
+        b("click", "#view-map");
+        b("click", "#screen-map .screenshot-link");
+        assert.equal(ev('document.querySelector(".image-dialog").open'), true);
+        assert.equal(
+          ev('document.activeElement.hasAttribute("data-image-close")'),
+          true,
+        );
+        assert.equal(ev("document.body.style.overflow"), "hidden");
+        assert.equal(
+          ev(
+            'document.querySelector(".image-dialog").getBoundingClientRect().width <= innerWidth',
+          ),
+          true,
+        );
+        b("click", "[data-image-zoom]");
+        assert.equal(
+          ev(
+            'document.querySelector("[data-image-zoom]").getAttribute("aria-pressed")',
+          ),
+          "true",
+        );
+        assert.equal(
+          ev(
+            'document.querySelector(".image-dialog-viewport").scrollWidth > document.querySelector(".image-dialog-viewport").clientWidth',
+          ),
+          true,
+        );
+        b("focus", ".image-dialog-viewport");
+        b("press", "Tab");
+        assert.equal(
+          ev('document.activeElement.hasAttribute("data-image-zoom")'),
+          true,
+        );
+        b("click", "[data-image-zoom]");
+        assert.equal(
+          ev(
+            'document.querySelector("[data-image-zoom]").getAttribute("aria-pressed")',
+          ),
+          "false",
+        );
+        b("press", "Escape");
+        assert.equal(ev('document.querySelector(".image-dialog").open'), false);
+        assert.equal(ev("document.body.style.overflow"), "");
+        assert.equal(
+          ev('document.activeElement.closest(".screen-panel").id'),
+          "screen-map",
+        );
+      }
+    },
+  );
+  check(
     "Mobile navigation opens, dismisses with Escape, and follows anchors",
     () => {
       b("set", "viewport", "390", "844");
@@ -151,6 +268,12 @@ try {
         ev("window.getSelection().toString()"),
         ev('document.querySelector("#quickstart").textContent'),
       );
+      b("click", '[data-copy="bibtex"]');
+      assert.equal(ev('document.querySelector(".citation-source").open'), true);
+      assert.equal(
+        ev("window.getSelection().toString()"),
+        ev('document.querySelector("#bibtex").textContent'),
+      );
       b("reload");
     },
   );
@@ -175,11 +298,92 @@ try {
     b("set", "viewport", String(width), String(height));
     b("open", address);
     b("wait", "--fn", 'document.fonts.status === "loaded"');
+    settled();
     b("screenshot", resolve(out, label + ".png"));
     if (label === "desktop")
       b("screenshot", "--full", resolve(out, "desktop-full.png"));
   }
+  check("Citation deep link opens the reusable citation", () => {
+    b("open", address + "/#citation");
+    assert.equal(ev('document.querySelector(".citation-source").open'), true);
+  });
+  check(
+    "Tab transitions run and reduced-motion preference immediately cancels them",
+    () => {
+      b("open", address);
+      const transition = ev(`(() => {
+      document.querySelector('#step-evidence').click();
+      return document.querySelector('#panel-evidence').getAnimations({subtree:true}).length;
+    })()`);
+      assert.ok(transition > 0);
+      b("set", "media", "light", "reduced-motion");
+      b(
+        "wait",
+        "--fn",
+        'matchMedia("(prefers-reduced-motion: reduce)").matches && document.getAnimations().filter(a=>a.playState==="running").length === 0',
+      );
+      assert.equal(
+        ev(
+          'document.getAnimations().filter(a=>a.playState==="running").length',
+        ),
+        0,
+      );
+      assert.equal(
+        ev("getComputedStyle(document.documentElement).scrollBehavior"),
+        "auto",
+      );
+      b("click", "#step-decision");
+      assert.equal(
+        ev(
+          'document.getAnimations().filter(a=>a.playState==="running").length',
+        ),
+        0,
+      );
+      assert.equal(
+        ev(
+          'getComputedStyle(document.querySelector("#panel-decision")).opacity',
+        ),
+        "1",
+      );
+    },
+  );
+  check(
+    "WCAG A/AA automated scans pass for all steps and the image viewer",
+    () => {
+      b("set", "viewport", "1440", "1000");
+      for (const step of ["intent", "change", "evidence", "decision"]) {
+        b("click", "#step-" + step);
+        const audit = JSON.parse(
+          b("a11y", "--tags", "wcag2a,wcag2aa", "--json"),
+        );
+        assert.equal(
+          audit.data.counts.violations,
+          0,
+          JSON.stringify(audit.data.violations),
+        );
+        writeFileSync(
+          resolve(out, `a11y-${step}.json`),
+          JSON.stringify(audit, null, 2) + "\n",
+        );
+      }
+      b("set", "viewport", "390", "844");
+      b("click", "#view-map");
+      b("click", "#screen-map .screenshot-link");
+      const audit = JSON.parse(b("a11y", "--tags", "wcag2a,wcag2aa", "--json"));
+      assert.equal(
+        audit.data.counts.violations,
+        0,
+        JSON.stringify(audit.data.violations),
+      );
+      writeFileSync(
+        resolve(out, "a11y-dialog.json"),
+        JSON.stringify(audit, null, 2) + "\n",
+      );
+      b("press", "Escape");
+    },
+  );
   const errors = JSON.parse(b("errors", "--json"));
+  assert.deepEqual(errors.data.errors, [], "No uncaught browser errors");
   writeFileSync(
     resolve(out, "browser-errors.json"),
     JSON.stringify(errors, null, 2) + "\n",

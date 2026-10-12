@@ -29,6 +29,8 @@ Agentic Consensus connects selected intent, structural commitments, executable a
 - Realization (Phi) links a selected structural change to candidate artifacts.
 - Rehydration (Psi) reads artifact changes back into the model and records discrepancies and unobservable state.
 
+Project-state review applies to shared interfaces, authority or policy changes, compatibility windows, and evidence obligations beyond the diff. Local edits can stay on ordinary diff-and-test review.
+
 ## What is implemented
 
 Consensus Control is an authenticated local review workspace with read-only GitHub pull-request import, commitment and source inspection, a change map, evidence obligations, authorized decisions, and an audit history. AI assistance is optional and advisory. Automated source analysis covers Python imports. The executable realization path is bounded to a single Python import substitution; it is not general code synthesis.
