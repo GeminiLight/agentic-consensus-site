@@ -1,0 +1,100 @@
+{
+  "axeVersion": "4.12.1",
+  "counts": {
+    "inapplicable": 36,
+    "incomplete": 2,
+    "passes": 24,
+    "violations": 0
+  },
+  "incomplete": [
+    {
+      "help": "Elements must only use permitted ARIA attributes",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+      "id": "aria-prohibited-attr",
+      "impact": "serious",
+      "nodeCount": 2,
+      "nodes": [
+        {
+          "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a pre with no valid role attribute.",
+          "html": "<pre tabindex=\"0\" aria-label=\"Local installation commands\">",
+          "target": [
+            "pre[aria-label=\"Local installation commands\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a pre with no valid role attribute.",
+          "html": "<pre tabindex=\"0\" aria-label=\"BibTeX citation\">",
+          "target": [
+            "pre[aria-label=\"BibTeX citation\"]"
+          ]
+        }
+      ],
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "RGAAv4",
+        "RGAA-7.1.1"
+      ]
+    },
+    {
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodeCount": 3,
+      "nodes": [
+        {
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+          "html": "<span aria-hidden=\"true\">↓</span>",
+          "target": [
+            ".primary.button[href$=\"#walkthrough\"] > span[aria-hidden=\"true\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+          "html": "<span aria-hidden=\"true\">↳</span>",
+          "target": [
+            ".panel-note > span[aria-hidden=\"true\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+          "html": "<span aria-hidden=\"true\">→</span>",
+          "target": [
+            ".next-step > span[aria-hidden=\"true\"]"
+          ]
+        }
+      ],
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ]
+    }
+  ],
+  "lifecycle": {
+    "effectiveLaunch": {
+      "browserLaunched": true,
+      "engine": "chrome",
+      "launchHash": 11677035664275012000
+    },
+    "launched": false,
+    "relaunchedBrowser": false,
+    "restartedBackground": false,
+    "restoreStatus": "not_configured",
+    "reused": true,
+    "saveStatus": "not_attempted"
+  },
+  "url": "http://127.0.0.1:8924/",
+  "violations": []
+}

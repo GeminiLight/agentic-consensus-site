@@ -1,85 +1,56 @@
 # Agentic Consensus
 
-> Agentic Consensus is a research project on governable consensus layers for scalable human-AI coding collaboration.
+> A versioned project-state model for human and AI coding collaboration, with an open-source review workspace called Consensus Control.
 
-Canonical URL: https://tianfuwang.tech/agentic-consensus-site/
-Paper PDF: https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-paper.pdf
-Code repository: https://github.com/GeminiLight/agentic-consensus
-Conference: KDD 2026 Blue Sky Track
-Language: English
+## Public resources
+
+- [Project website](https://tianfuwang.tech/agentic-consensus-site/): overview, illustrative walkthrough, real workspace captures, paper, and setup.
+- [arXiv preprint](https://arxiv.org/abs/2604.17883)
+- [alphaXiv reader](https://www.alphaxiv.org/abs/2604.17883)
+- [Implementation](https://github.com/GeminiLight/agentic-consensus): Python and JavaScript, Apache-2.0.
+- [Website source](https://github.com/GeminiLight/agentic-consensus-site)
 
 ## Paper
 
 Title: Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer
+Authors: Tianfu Wang, Zhezheng Hao, Yin Wu, Wei Wu, Qiang Lin, Hande Dong, Nicholas Jing Yuan, Hui Xiong.
+Current project affiliations: The Hong Kong University of Science and Technology (Guangzhou), Zhejiang University, Tencent. The earlier arXiv version lists its own publication-time affiliations.
+Year: 2026. arXiv:2604.17883 [cs.SE], first submitted 20 April 2026.
+Version note: This website describes the current research and implementation. The linked arXiv preprint is an earlier version; the authors are preparing an update. No conference acceptance is asserted.
 
-Authors: Tianfu Wang, Zhezheng Hao, Yin Wu, Wei Wu, Qiang Lin, Hande Dong, Nicholas Jing Yuan, Hui Xiong
+## Core idea
 
-Affiliations: HKUST (GZ), Zhejiang University, USTC, Tencent
+Agentic Consensus connects selected intent, structural commitments, executable artifacts, evidence, and authorized decisions in a versioned project state. Consensus means the currently authorized state, not agent voting or a guarantee of truth. Contested claims, uncertainties, and scoped waivers remain explicit.
 
-## Summary
+- Intent (I): the original request, alternatives, clarification, and selection.
+- Commitments (C): interfaces, dependencies, invariants, and authority policies.
+- Artifacts (A): exact code, configuration, and revisions.
+- Evidence (E): checks linked to claims and artifact versions, with scope and freshness.
+- Realization (Phi) links a selected structural change to candidate artifacts.
+- Rehydration (Psi) reads artifact changes back into the model and records discrepancies and unobservable state.
 
-Agentic Consensus argues that vibe coding can produce executable code quickly while leaving no durable record of the structural commitments, dependencies, assumptions, and evidence behind that code. The paper frames this as a control failure caused by dimension collapse: code plus chat history flatten complex system topology into low-dimensional text. It proposes a consensus layer C as the primary artifact of AI-assisted engineering.
+## What is implemented
 
-## Abstract
+Consensus Control is an authenticated local review workspace with read-only GitHub pull-request import, commitment and source inspection, a change map, evidence obligations, authorized decisions, and an audit history. AI assistance is optional and advisory. Automated source analysis covers Python imports. The executable realization path is bounded to a single Python import substitution; it is not general code synthesis.
 
-Vibe coding produces correct, executable code at speed, but leaves no record of the structural commitments, dependencies, or evidence behind it. Reviewers cannot determine what invariants were assumed, what changed, or why a regression occurred. This is not a generation failure but a control failure: the dominant artifact of AI-assisted development, code plus chat history, performs dimension collapse, flattening complex system topology into low-dimensional text and making systems opaque and fragile under change. Agentic Consensus proposes a consensus layer C, an operable world model represented as a typed property graph, that replaces code as the primary artifact of engineering. Executable artifacts are derived from C and kept in correspondence via synchronization operators Phi and Psi. Evidence links directly to structural claims in C, making every commitment auditable and under-specification explicit as measurable consensus entropy rather than a silent guess.
+The GitHub connector does not push, merge, create, or delete pull requests. A local governed decision is not a GitHub merge. Deployment is localhost or behind operator-managed TLS; this is not a hosted multi-tenant SaaS.
 
-## Core Concepts
+## Research status
 
-- Intent I: user intent, potentially partial and time-varying.
-- Consensus layer C: a typed, queryable property graph that records structural commitments.
-- Artifacts A: executable artifacts such as code, configuration, and dataflows.
-- Evidence E: tests, traces, checks, provenance, and validation signals linked to claims in C.
-- Phi: the realization operator that compiles consensus changes into artifact diffs.
-- Psi: the rehydration operator that infers consensus structure from artifact changes.
-- Consensus entropy: a signal of unresolved structural ambiguity.
+The planned comparative evaluation separates native practice (B0), a governance ledger (B1), and equivalent relational review (B2). Controlled causal benefits and the incremental value of graph navigation remain future evaluation questions.
 
-## Contributions
-
-- The paper argues that the consensus layer C should become the primary artifact of AI-assisted engineering.
-- It formalizes a workflow around bidirectional synchronization between C and executable artifacts.
-- It shifts evaluation from code correctness alone to alignment fidelity, consensus entropy, intervention distance, and cognitive load.
-- It proposes benchmark task families for measuring whether consensus-based workflows reduce human intervention compared with chat-driven baselines.
-
-## Case Studies
-
-- ML training pipeline degradation: vibe coding fails to connect AUC degradation to feature-window drift; Agentic Consensus uses lineage and evidence to locate the root cause.
-- A/B experiment feature leakage: vibe coding accepts a statistically significant but causally invalid lift; Agentic Consensus blocks inference through a feature parity contract.
-- Microservice API upgrade: downstream dependencies become explicit before rollout.
-
-## Suggested Answers
-
-Q: What is Agentic Consensus?
-A: Agentic Consensus is a proposed software-engineering paradigm in which a governable consensus layer C acts as the primary artifact for human-AI coding collaboration.
-
-Q: Why is vibe coding insufficient?
-A: Vibe coding can generate correct-looking executable code, but it usually fails to preserve the structural commitments, dependencies, assumptions, and evidence required for reviewers to understand and control changes.
-
-Q: What is the key technical object?
-A: The key object is C, a typed property graph that links intent, artifacts, and evidence, and supports realization, rehydration, review, rollback, and uncertainty-aware clarification.
-
-Q: What should future evaluation measure?
-A: Evaluation should measure alignment fidelity, consensus entropy, intervention distance, and cognitive load, not only whether generated code passes tests.
-
-## Important Links
-
-- Project page: https://tianfuwang.tech/agentic-consensus-site/
-- Paper PDF: https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-paper.pdf
-- Repository: https://github.com/GeminiLight/agentic-consensus
-- Open Graph image: https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png
-- Sitemap: https://tianfuwang.tech/agentic-consensus-site/sitemap.xml
+The homepage capability-migration walkthrough is illustrative. Workspace screenshots are recorded system captures. A source reading is not behavioral verification, and recorded evidence does not automatically satisfy an obligation.
 
 ## Citation
 
 ```bibtex
-@misc{wang2026agenticconsensus,
+@misc{wang2026scalinghumanaicodingcollaboration,
   title = {Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer},
   author = {Wang, Tianfu and Hao, Zhezheng and Wu, Yin and Wu, Wei and Lin, Qiang and Dong, Hande and Yuan, Nicholas Jing and Xiong, Hui},
   year = {2026},
-  note = {Submitted to KDD 2026 Blue Sky Track}
+  eprint = {2604.17883},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SE},
+  url = {https://arxiv.org/abs/2604.17883}
 }
 ```
-
-## Recommended Short Answer
-
-Agentic Consensus is a KDD 2026 Blue Sky research project arguing that scalable AI coding requires a governable consensus layer C: a typed property graph that makes intent, dependencies, invariants, and evidence explicit so humans and agents can review, synchronize, and control software changes beyond raw code generation.
