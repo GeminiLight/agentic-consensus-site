@@ -52,7 +52,6 @@ The homepage capability-migration walkthrough is illustrative. Workspace screens
   year = {2026},
   eprint = {2604.17883},
   archivePrefix = {arXiv},
-  primaryClass = {cs.SE},
   url = {https://arxiv.org/abs/2604.17883}
 }
 ```

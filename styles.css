@@ -1150,7 +1150,11 @@ b {
 .citation pre {
   padding: 20px 22px;
   margin: 0;
-  overflow: auto;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
   font: 11px/1.9 var(--mono);
   color: #51644b;
 }
