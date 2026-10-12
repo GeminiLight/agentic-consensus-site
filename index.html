@@ -3,50 +3,129 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Agentic Consensus | Governable Consensus Layer for Human-AI Coding Collaboration</title>
+    <title>Agentic Consensus — Keep the project understood.</title>
     <meta
       name="description"
-      content="Agentic Consensus argues that scalable human-AI coding collaboration requires a governable consensus layer: an auditable typed property graph that links intent, artifacts, and evidence."
+      content="A shared, versioned project state for human and AI coding collaboration. Connect intent, code, evidence, and human decisions with Agentic Consensus and Consensus Control."
     />
     <meta
-      name="keywords"
-      content="Agentic Consensus, human-AI coding collaboration, vibe coding, consensus layer, software engineering, knowledge representation, agentic AI, KDD 2026, AI coding agents"
+      name="author"
+      content="Tianfu Wang, Zhezheng Hao, Yin Wu, Wei Wu, Qiang Lin, Hande Dong, Nicholas Jing Yuan, Hui Xiong"
     />
-    <meta name="author" content="Tianfu Wang, Zhezheng Hao, Yin Wu, Wei Wu, Qiang Lin, Hande Dong, Nicholas Jing Yuan, Hui Xiong" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="theme-color" content="#2867ff" />
-    <link rel="canonical" href="https://tianfuwang.tech/agentic-consensus-site/" />
-    <link rel="icon" href="./assets/agentic-consensus-logo.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="./assets/agentic-consensus-icon-192.png" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <link
+      rel="canonical"
+      href="https://tianfuwang.tech/agentic-consensus-site/"
+    />
+    <link rel="icon" href="./assets/mark.svg" type="image/svg+xml" />
+    <link
+      rel="apple-touch-icon"
+      href="./assets/agentic-consensus-icon-192.png"
+    />
     <link rel="manifest" href="./site.webmanifest" />
-    <link rel="alternate" type="application/pdf" title="Agentic Consensus paper PDF" href="./assets/agentic-consensus-paper.pdf" />
-    <link rel="alternate" type="text/plain" title="AI-readable Agentic Consensus summary" href="./llms.txt" />
-    <script>document.documentElement.classList.add("js");</script>
+    <link
+      rel="alternate"
+      type="application/pdf"
+      title="Agentic Consensus arXiv paper"
+      href="https://arxiv.org/pdf/2604.17883"
+    />
+    <link
+      rel="alternate"
+      type="text/plain"
+      title="Project summary"
+      href="./llms.txt"
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/instrument-serif.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/dm-sans.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link rel="stylesheet" href="./styles.css" />
-
+    <script src="./script.js" defer></script>
+    <noscript
+      ><style>
+        .demo-panel[hidden],
+        .screen-panel[hidden] {
+          display: block !important;
+        }
+        .demo-panel,
+        .screen-panel {
+          border-top: 1px solid #d8dcd2;
+        }
+        .demo-tabs,
+        .showcase-tabs,
+        .next-step {
+          display: none !important;
+        }
+        .demo-body {
+          display: block;
+        }
+        @media (max-width: 600px) {
+          .header-inner {
+            flex-wrap: wrap;
+            height: auto;
+            padding-block: 12px;
+          }
+          .top-nav {
+            display: flex;
+            order: 3;
+            width: 100%;
+            justify-content: space-between;
+          }
+        }
+      </style></noscript
+    >
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Agentic Consensus" />
-    <meta property="og:title" content="Agentic Consensus | Governable Consensus Layer for Human-AI Coding Collaboration" />
+    <meta
+      property="og:title"
+      content="Agentic Consensus — Keep the project understood."
+    />
     <meta
       property="og:description"
-      content="A KDD 2026 Blue Sky paper arguing that AI coding needs a structured consensus layer C linking human intent, executable artifacts, and evidence."
+      content="Build with agents. Keep intent, code, evidence, and human decisions connected. Explore the research and the open-source review workspace."
     />
-    <meta property="og:url" content="https://tianfuwang.tech/agentic-consensus-site/" />
-    <meta property="og:image" content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png" />
+    <meta
+      property="og:url"
+      content="https://tianfuwang.tech/agentic-consensus-site/"
+    />
+    <meta
+      property="og:image"
+      content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Agentic Consensus paper project logo and title" />
+    <meta
+      property="og:image:alt"
+      content="Agentic Consensus: Build with agents. Keep the project understood. Intent, commitments, code, and evidence, linked by human decisions."
+    />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Agentic Consensus | Governable Consensus Layer" />
+    <meta
+      name="twitter:title"
+      content="Agentic Consensus — Keep the project understood."
+    />
     <meta
       name="twitter:description"
-      content="From vibe coding opacity to a governable consensus layer for auditable human-AI software engineering."
+      content="A shared project state for human and AI coding collaboration. Research, an interactive walkthrough, and open-source software."
     />
-    <meta name="twitter:image" content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png" />
-
-    <meta name="citation_title" content="Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer" />
+    <meta
+      name="twitter:image"
+      content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png"
+    />
+    <meta
+      name="citation_title"
+      content="Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer"
+    />
     <meta name="citation_author" content="Wang, Tianfu" />
     <meta name="citation_author" content="Hao, Zhezheng" />
     <meta name="citation_author" content="Wu, Yin" />
@@ -55,117 +134,62 @@
     <meta name="citation_author" content="Dong, Hande" />
     <meta name="citation_author" content="Yuan, Nicholas Jing" />
     <meta name="citation_author" content="Xiong, Hui" />
-    <meta name="citation_publication_date" content="2026" />
-    <meta name="citation_conference_title" content="KDD 2026 Blue Sky Track" />
-    <meta name="citation_fulltext_html_url" content="https://tianfuwang.tech/agentic-consensus-site/" />
-    <meta name="citation_pdf_url" content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-paper.pdf" />
-    <meta name="citation_keywords" content="knowledge representation; software engineering; human-AI collaboration; agentic AI; vibe coding" />
-    <meta name="DC.title" content="Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer" />
-    <meta name="DC.creator" content="Tianfu Wang; Zhezheng Hao; Yin Wu; Wei Wu; Qiang Lin; Hande Dong; Nicholas Jing Yuan; Hui Xiong" />
-    <meta name="DC.description" content="A KDD 2026 Blue Sky paper proposing Agentic Consensus, a governable consensus layer for auditable human-AI coding collaboration." />
-    <meta name="DC.identifier" content="https://tianfuwang.tech/agentic-consensus-site/" />
-    <meta name="DC.language" content="en" />
-    <meta name="DC.type" content="Text" />
-
+    <meta name="citation_publication_date" content="2026/04/20" />
+    <meta name="citation_arxiv_id" content="2604.17883" />
+    <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2604.17883" />
+    <meta
+      name="citation_fulltext_html_url"
+      content="https://tianfuwang.tech/agentic-consensus-site/"
+    />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "WebPage",
-            "@id": "https://tianfuwang.tech/agentic-consensus-site/#webpage",
+            "@type": "WebSite",
+            "@id": "https://tianfuwang.tech/agentic-consensus-site/#website",
+            "name": "Agentic Consensus",
             "url": "https://tianfuwang.tech/agentic-consensus-site/",
-            "name": "Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer",
-            "description": "Project page for Agentic Consensus, a KDD 2026 Blue Sky paper on governable consensus layers for human-AI coding collaboration.",
-            "inLanguage": "en",
-            "primaryImageOfPage": {
-              "@type": "ImageObject",
-              "url": "https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png",
-              "width": 1200,
-              "height": 630
-            },
-            "mainEntity": {
-              "@id": "https://tianfuwang.tech/agentic-consensus-site/#paper"
-            }
+            "inLanguage": "en"
           },
           {
             "@type": "ScholarlyArticle",
             "@id": "https://tianfuwang.tech/agentic-consensus-site/#paper",
             "headline": "Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer",
-            "name": "Agentic Consensus",
-            "description": "Agentic Consensus reframes AI-assisted software engineering around a governable consensus layer C that links intent, artifacts, and evidence.",
-            "abstract": "Vibe coding produces executable code at speed but leaves no durable record of structural commitments, dependencies, or evidence. Agentic Consensus proposes a consensus layer C, represented as a typed property graph, as the primary engineering artifact from which executable artifacts are derived and rehydrated through synchronization operators Phi and Psi.",
-            "datePublished": "2026",
+            "description": "A research preprint on a governable consensus layer for human-AI coding collaboration.",
+            "datePublished": "2026-04-20",
+            "identifier": "arXiv:2604.17883",
+            "sameAs": [
+              "https://arxiv.org/abs/2604.17883",
+              "https://www.alphaxiv.org/abs/2604.17883"
+            ],
             "inLanguage": "en",
             "isAccessibleForFree": true,
-            "url": "https://tianfuwang.tech/agentic-consensus-site/",
-            "sameAs": [
-              "https://github.com/GeminiLight/agentic-consensus"
-            ],
-            "image": "https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png",
-            "thumbnailUrl": "https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-logo.svg",
-            "mainEntityOfPage": {
-              "@id": "https://tianfuwang.tech/agentic-consensus-site/#webpage"
-            },
+            "url": "https://tianfuwang.tech/agentic-consensus-site/#research",
             "encoding": {
               "@type": "MediaObject",
-              "contentUrl": "https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-paper.pdf",
+              "contentUrl": "https://arxiv.org/pdf/2604.17883",
               "encodingFormat": "application/pdf"
             },
             "author": [
-              { "@type": "Person", "name": "Tianfu Wang", "affiliation": "HKUST (GZ)" },
-              { "@type": "Person", "name": "Zhezheng Hao", "affiliation": "Zhejiang University" },
-              { "@type": "Person", "name": "Yin Wu", "affiliation": "HKUST (GZ)" },
-              { "@type": "Person", "name": "Wei Wu", "affiliation": "USTC" },
-              { "@type": "Person", "name": "Qiang Lin", "affiliation": "Tencent" },
-              { "@type": "Person", "name": "Hande Dong", "affiliation": "Tencent" },
-              { "@type": "Person", "name": "Nicholas Jing Yuan", "affiliation": "HKUST (GZ)" },
-              { "@type": "Person", "name": "Hui Xiong", "affiliation": "HKUST (GZ)" }
-            ],
-            "keywords": [
-              "knowledge representation",
-              "software engineering",
-              "human-AI collaboration",
-              "agentic AI",
-              "vibe coding",
-              "typed property graph"
-            ],
-            "about": [
-              "Human-AI coding collaboration",
-              "Software engineering governance",
-              "Knowledge representation",
-              "AI coding agents"
+              { "@type": "Person", "name": "Tianfu Wang" },
+              { "@type": "Person", "name": "Zhezheng Hao" },
+              { "@type": "Person", "name": "Yin Wu" },
+              { "@type": "Person", "name": "Wei Wu" },
+              { "@type": "Person", "name": "Qiang Lin" },
+              { "@type": "Person", "name": "Hande Dong" },
+              { "@type": "Person", "name": "Nicholas Jing Yuan" },
+              { "@type": "Person", "name": "Hui Xiong" }
             ]
           },
           {
             "@type": "SoftwareSourceCode",
-            "@id": "https://tianfuwang.tech/agentic-consensus-site/#code",
-            "name": "Agentic Consensus",
+            "name": "Consensus Control",
+            "description": "A local-first, authenticated review workspace for evidence-backed agentic code changes.",
             "codeRepository": "https://github.com/GeminiLight/agentic-consensus",
-            "programmingLanguage": ["HTML", "CSS", "LaTeX"],
-            "applicationCategory": "ResearchProject"
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://tianfuwang.tech/agentic-consensus-site/#faq",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is Agentic Consensus?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Agentic Consensus is a proposed software-engineering paradigm in which a governable consensus layer C acts as the primary artifact for human-AI coding collaboration."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What problem does it address?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "It addresses the representation gap created by vibe coding, where generated code may execute correctly but the structural commitments, dependencies, assumptions, and evidence behind the change remain implicit."
-                }
-              }
-            ]
+            "programmingLanguage": ["Python", "JavaScript"],
+            "license": "https://www.apache.org/licenses/LICENSE-2.0",
+            "runtimePlatform": "Python 3.11+"
           }
         ]
       }
@@ -173,266 +197,895 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header" data-elevate>
-      <a class="brand" href="#top" aria-label="Agentic Consensus home">
-        <img class="brand-mark" src="./assets/agentic-consensus-logo.svg" alt="" aria-hidden="true" />
-        <span>Agentic Consensus</span>
-      </a>
-      <nav class="top-nav" aria-label="Primary navigation">
-        <a href="#layer">Layer C</a>
-        <a href="#cases">Cases</a>
-        <a href="#evaluation">Evaluation</a>
-        <a href="#resources">Resources</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Agentic Consensus home"
+          ><img src="./assets/mark.svg" width="34" height="34" alt="" /><span
+            >Agentic Consensus</span
+          ></a
+        >
+        <nav class="top-nav" aria-label="Primary navigation">
+          <a href="#walkthrough">The idea</a
+          ><a href="#workspace">The workspace</a
+          ><a href="#research">The research</a>
+        </nav>
+        <a
+          class="header-code"
+          href="https://github.com/GeminiLight/agentic-consensus"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16" /></svg
+          >Code <span aria-hidden="true">↗</span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          hidden
+        >
+          Menu <span aria-hidden="true">+</span>
+        </button>
+      </div>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a href="#walkthrough">The idea</a><a href="#workspace">The workspace</a
+        ><a href="#research">The research</a><a href="#resources">Resources</a>
       </nav>
-      <a class="nav-cta" href="./assets/agentic-consensus-paper.pdf">Paper PDF</a>
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-headline reveal">
-          <p class="paper-kicker">KDD 2026 Blue Sky Track</p>
-          <h1 id="hero-title">
-            <span>Scaling Human-AI Coding Collaboration</span>
-            <span>Requires a Governable Consensus Layer</span>
-          </h1>
-          <p class="paper-authors">
-            Tianfu Wang<sup>1</sup>, Zhezheng Hao<sup>2</sup>, Yin Wu<sup>1</sup>, Wei Wu<sup>3</sup>,
-            Qiang Lin<sup>4</sup>, Hande Dong<sup>4</sup>, Nicholas Jing Yuan<sup>1</sup>, Hui Xiong<sup>1</sup>
-          </p>
-          <p class="paper-affiliations">
-            <sup>1</sup>HKUST (GZ) &nbsp; <sup>2</sup>Zhejiang University &nbsp;
-            <sup>3</sup>USTC &nbsp; <sup>4</sup>Tencent
-          </p>
+      <section class="hero wrap" id="top" aria-labelledby="hero-title">
+        <div class="hero-eyebrow">
+          <span class="eyebrow"
+            ><i class="status-dot" aria-hidden="true"></i>Human + agent
+            collaboration</span
+          ><span class="edition"
+            >Research &amp; open-source software / 2026</span
+          >
         </div>
-
-        <div class="hero-body">
-          <div class="hero-copy reveal">
-            <p class="hero-subtitle">
-              Agentic Consensus reframes AI-assisted software engineering around a governable layer
-              <strong>C</strong>: a typed, auditable world model that keeps intent, executable artifacts,
-              and evidence in correspondence.
-            </p>
-            <div class="hero-actions" aria-label="Project actions">
-              <a class="button button-primary" href="./assets/agentic-consensus-paper.pdf">Read paper</a>
-              <a class="button button-secondary" href="https://github.com/GeminiLight/agentic-consensus">Repository</a>
-              <button class="button button-ghost" type="button" data-copy-bib>Copy BibTeX</button>
-            </div>
-            <dl class="hero-metrics" aria-label="Core conceptual claims">
-              <div>
-                <dt>C</dt>
-                <dd>consensus layer</dd>
-              </div>
-              <div>
-                <dt>Phi / Psi</dt>
-                <dd>round-trip sync</dd>
-              </div>
-              <div>
-                <dt>E</dt>
-                <dd>linked evidence</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div class="consensus-console reveal" aria-label="Agentic Consensus diagram">
-            <div class="console-top">
-              <span>consensus / governable-layer.c</span>
-              <span>H(C|I): high</span>
-            </div>
-            <div class="graph-stage">
-              <div class="graph-node node-intent">Intent I</div>
-              <div class="graph-node node-consensus">Consensus Layer C</div>
-              <div class="graph-node node-artifact">Artifacts A</div>
-              <div class="graph-node node-evidence">Evidence E</div>
-              <svg class="graph-lines" viewBox="0 0 640 360" aria-hidden="true">
-                <path d="M132 90 C226 72 276 98 320 164" />
-                <path d="M320 164 C412 102 480 84 542 96" />
-                <path d="M542 96 C500 202 438 252 328 266" />
-                <path d="M328 266 C242 246 180 194 132 90" />
-                <path class="dashed" d="M542 96 C470 170 400 178 320 164" />
-              </svg>
-              <div class="audit-strip">
-                <span>schema: typed graph</span>
-                <span>contracts: explicit</span>
-                <span>evidence: linked</span>
-              </div>
-            </div>
+        <h1 id="hero-title">
+          Build with agents.<br />Keep the project <em>understood.</em>
+        </h1>
+        <div class="hero-bottom">
+          <p class="hero-description">
+            Code evolves. Intent gets lost.
+            <strong>Agentic Consensus</strong> keeps what you meant, what
+            changed, and what you can trust in one shared project state.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#walkthrough"
+              >Explore the idea <span aria-hidden="true">↓</span></a
+            ><a class="button secondary" href="https://arxiv.org/abs/2604.17883"
+              >Read the paper <span aria-hidden="true">↗</span></a
+            >
           </div>
         </div>
-      </section>
-
-      <section class="section thesis-band" aria-labelledby="thesis-title">
-        <div class="section-header section-header-centered reveal">
-          <p class="section-kicker">Thesis</p>
-          <h2 id="thesis-title">The bottleneck is no longer generation. It is control.</h2>
-          <p>
-            Vibe coding can produce executable code quickly, but it leaves structural commitments implicit.
-            As agent throughput scales, reviewers need a primary artifact that records assumptions,
-            dependencies, invariants, and evidence before they approve changes.
-          </p>
+        <div class="hero-footnote">
+          <span
+            >A governable consensus layer for human and AI coding
+            collaboration.</span
+          ><a href="#workspace"
+            >Meet Consensus Control <span aria-hidden="true">↘</span></a
+          >
         </div>
       </section>
 
-      <section class="section abstract-section" id="abstract" aria-labelledby="abstract-title">
-        <div class="section-header reveal">
-          <p class="section-kicker">Abstract</p>
-          <h2 id="abstract-title">From vibe coding opacity to auditable agreement.</h2>
-          <p>
-            Vibe coding produces correct, executable code at speed, but leaves no record of the structural
-            commitments, dependencies, or evidence behind it. This is not a generation failure but a control
-            failure: code plus chat history performs dimension collapse, flattening complex system topology
-            into low-dimensional text. Agentic Consensus proposes the consensus layer C as an operable world
-            model represented as a typed property graph. Executable artifacts are derived from C and kept in
-            correspondence via Phi and Psi synchronization operators, while evidence links directly to
-            structural claims so commitments become auditable.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" id="layer" aria-labelledby="layer-title">
-        <div class="section-header section-header-centered reveal">
-          <p class="section-kicker">Consensus layer C</p>
-          <h2 id="layer-title">A primary artifact for engineering agreement.</h2>
-          <p>
-            C is not documentation after the fact. It is the coordination surface where humans and agents
-            negotiate structure, realize artifacts, rehydrate changes, and attach validation evidence.
-          </p>
-        </div>
-        <div class="method-grid">
-          <article class="method-card reveal">
-            <span class="card-index">01</span>
-            <h3>Intent becomes structure</h3>
-            <p>Partial human intent is encoded into typed claims about modules, data, contracts, and invariants.</p>
-          </article>
-          <article class="method-card reveal">
-            <span class="card-index">02</span>
-            <h3>Artifacts derive from C</h3>
-            <p>Phi realizes consensus changes into code, configuration, dataflows, and other executable artifacts.</p>
-          </article>
-          <article class="method-card reveal">
-            <span class="card-index">03</span>
-            <h3>Evidence attaches to claims</h3>
-            <p>Tests, traces, provenance, and validation jobs link to the specific structural commitments they support.</p>
-          </article>
-          <article class="method-card reveal">
-            <span class="card-index">04</span>
-            <h3>Drift is monitored</h3>
-            <p>Psi rehydrates artifact changes back into C, making structural drift and uncertainty visible.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section figure-section" id="cases" aria-labelledby="cases-title">
-        <div class="section-header section-header-centered reveal">
-          <p class="section-kicker">Case studies</p>
-          <h2 id="cases-title">Two failures where code looked correct, but structure was wrong.</h2>
-          <p>
-            The paper contrasts vibe coding with Agentic Consensus in ML training degradation and A/B
-            experiment leakage. Both failures are structural, not generative.
-          </p>
-        </div>
-        <figure class="wide-figure reveal">
-          <img src="./assets/figure-cases.webp" alt="Two case studies contrasting vibe coding with Agentic Consensus for ML pipeline degradation and A/B experiment leakage" loading="lazy" />
-          <figcaption>Agentic Consensus exposes lineage, causal contracts, evidence, and rollback-relevant state that chat-driven coding leaves implicit.</figcaption>
-        </figure>
-        <div class="case-grid">
-          <figure class="case-card reveal">
-            <img src="./assets/figure-a-microservice.webp" alt="Microservice API upgrade case comparing vibe coding with consensus layer service dependencies" loading="lazy" />
-            <figcaption>Microservice API upgrade: downstream service dependencies become explicit before rollout.</figcaption>
-          </figure>
-          <figure class="case-card reveal">
-            <img src="./assets/figure-b-ml-pipeline.webp" alt="ML training pipeline case showing feature drift diagnosis through consensus lineage" loading="lazy" />
-            <figcaption>ML pipeline degradation: lineage and evidence collapse uncertainty to a root cause.</figcaption>
-          </figure>
-          <figure class="case-card reveal">
-            <img src="./assets/figure-c-ab-experiment.webp" alt="A/B experiment feature leakage case showing a parity contract blocked before inference" loading="lazy" />
-            <figcaption>A/B experiment leakage: a structural parity contract blocks a causally invalid lift.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section evaluation-section" id="evaluation" aria-labelledby="evaluation-title">
-        <div class="section-header reveal">
-          <p class="section-kicker">Evaluation framework</p>
-          <h2 id="evaluation-title">Measure alignment and control, not just code correctness.</h2>
-        </div>
-        <div class="eval-grid">
-          <article class="eval-card reveal">
-            <h3>Alignment fidelity</h3>
-            <p>Does C make intent explicit at the right abstraction level and help reviewers predict downstream consequences?</p>
-          </article>
-          <article class="eval-card reveal">
-            <h3>Consensus entropy</h3>
-            <p>How much structural ambiguity remains given current intent, and when should execution switch to clarification?</p>
-          </article>
-          <article class="eval-card reveal">
-            <h3>Intervention distance</h3>
-            <p>How many human corrections are needed to reach a correct consensus state compared with chat-driven baselines?</p>
-          </article>
-          <article class="eval-card reveal">
-            <h3>Cognitive load</h3>
-            <p>Do humans understand systems faster through C than by reading raw code, configs, and chat history?</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section resources-section" id="resources" aria-labelledby="resources-title">
-        <div class="resource-card reveal">
+      <section
+        class="walkthrough wrap"
+        id="walkthrough"
+        aria-labelledby="walkthrough-title"
+      >
+        <div class="walkthrough-intro">
           <div>
-            <p class="section-kicker">Resources</p>
-            <h2 id="resources-title">Paper, repository, citation, and AI-readable context.</h2>
-            <p>
-              Use the PDF for the submitted paper, the repository for source and updates, and llms.txt for
-              structured project context that AI research assistants can parse directly.
-            </p>
+            <p class="eyebrow">01 / A closer look</p>
+            <h2 id="walkthrough-title">
+              The tests pass.<br /><em>Does the change belong?</em>
+            </h2>
           </div>
-          <div class="resource-actions">
-            <a class="button button-primary" href="./assets/agentic-consensus-paper.pdf">Paper PDF</a>
-            <a class="button button-secondary" href="https://github.com/GeminiLight/agentic-consensus">Open repository</a>
-            <a class="button button-secondary" href="./llms.txt">Read llms.txt</a>
+          <p>
+            A new connector works. But does it still respect the project’s
+            access policy? Follow a change from intent to a human decision.
+          </p>
+        </div>
+        <div class="review-demo" data-tabs>
+          <div class="demo-topbar">
+            <span class="demo-name"
+              ><img src="./assets/mark.svg" width="24" height="24" alt="" />
+              Consensus Control <span class="demo-divider">/</span>
+              <span>Capability migration</span></span
+            ><span class="demo-label">Illustrative walkthrough</span>
+          </div>
+          <div class="demo-body">
+            <div
+              class="demo-tabs"
+              role="tablist"
+              aria-label="Walkthrough steps"
+              aria-orientation="vertical"
+            >
+              <button
+                id="step-intent"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-intent"
+                tabindex="0"
+              >
+                <span class="step-number">01</span
+                ><span
+                  >Start with intent<small
+                    >Make the commitment explicit</small
+                  ></span
+                ><span class="step-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button
+                id="step-change"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-change"
+                tabindex="-1"
+              >
+                <span class="step-number">02</span
+                ><span
+                  >Inspect the change<small
+                    >Connect meaning to code</small
+                  ></span
+                ><span class="step-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button
+                id="step-evidence"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-evidence"
+                tabindex="-1"
+              >
+                <span class="step-number">03</span
+                ><span
+                  >Question the evidence<small
+                    >Check scope and freshness</small
+                  ></span
+                ><span class="step-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button
+                id="step-decision"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-decision"
+                tabindex="-1"
+              >
+                <span class="step-number">04</span
+                ><span
+                  >Keep humans in control<small
+                    >Record an accountable decision</small
+                  ></span
+                ><span class="step-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <div class="demo-content">
+              <section
+                class="demo-panel"
+                id="panel-intent"
+                role="tabpanel"
+                aria-labelledby="step-intent"
+                tabindex="0"
+              >
+                <div class="panel-meta">
+                  <span>REQUEST → COMMITMENT</span
+                  ><span class="pill">Versioned intent</span>
+                </div>
+                <blockquote>
+                  “Use task-scoped access.<br />Keep the existing connectors
+                  working.”
+                </blockquote>
+                <div class="intent-line" aria-hidden="true">
+                  <span></span><span>clarify &amp; agree</span><span></span>
+                </div>
+                <div class="commitment">
+                  <span class="commitment-symbol">C<span>01</span></span>
+                  <div>
+                    <span class="small-label">The shared commitment</span>
+                    <h3>
+                      A connector can only use capabilities granted to its
+                      current task.
+                    </h3>
+                    <p>
+                      Any legacy exception needs a named scope and an expiry.
+                    </p>
+                  </div>
+                </div>
+                <p class="panel-note">
+                  <span aria-hidden="true">↳</span> Preserve the selected
+                  meaning, alternatives, and who agreed.
+                </p>
+              </section>
+              <section
+                class="demo-panel"
+                id="panel-change"
+                role="tabpanel"
+                aria-labelledby="step-change"
+                tabindex="0"
+                hidden
+              >
+                <div class="panel-meta">
+                  <span>COMMITMENT → ARTIFACT</span
+                  ><span class="pill warning">Needs inspection</span>
+                </div>
+                <h3 class="panel-title">
+                  A small import.<br />A bigger change in authority.
+                </h3>
+                <div
+                  class="code-diff"
+                  role="group"
+                  aria-label="Illustrative Python import change"
+                >
+                  <div class="code-file">
+                    connector.py <span>Illustrative diff</span>
+                  </div>
+                  <code
+                    ><span class="line-removed"
+                      >− from task_auth import get_token</span
+                    ><span class="line-added"
+                      >+ from workspace_auth import get_token</span
+                    ></code
+                  >
+                </div>
+                <div class="relation-path">
+                  <span>Connector</span><span aria-hidden="true">→</span
+                  ><span class="risk-node">Workspace token</span
+                  ><span aria-hidden="true">≠</span><span>Task scope</span>
+                </div>
+                <p class="panel-note">
+                  Trace the changed dependency back to the commitment it may
+                  violate. Dynamic credential resolution can remain
+                  unobservable.
+                </p>
+              </section>
+              <section
+                class="demo-panel"
+                id="panel-evidence"
+                role="tabpanel"
+                aria-labelledby="step-evidence"
+                tabindex="0"
+                hidden
+              >
+                <div class="panel-meta">
+                  <span>ARTIFACT → EVIDENCE</span
+                  ><span class="pill warning">Coverage gap</span>
+                </div>
+                <h3 class="panel-title">
+                  A result is only useful<br />if it covers this change.
+                </h3>
+                <div class="evidence-list">
+                  <div>
+                    <span
+                      ><b>Unit tests</b
+                      ><small>Mocks allow every tool</small></span
+                    ><span class="evidence-status pass"
+                      >Pass · limited scope</span
+                    >
+                  </div>
+                  <div>
+                    <span
+                      ><b>Runtime access trace</b
+                      ><small>Recorded against an older revision</small></span
+                    ><span class="evidence-status stale">Stale</span>
+                  </div>
+                  <div>
+                    <span
+                      ><b>Denied-capability check</b
+                      ><small>Required for the proposed revision</small></span
+                    ><span class="evidence-status missing">Missing</span>
+                  </div>
+                </div>
+                <p class="panel-note">
+                  Passing, current, and sufficient are different questions.
+                  Evidence stays attached to the claim and artifact version it
+                  actually covers.
+                </p>
+              </section>
+              <section
+                class="demo-panel"
+                id="panel-decision"
+                role="tabpanel"
+                aria-labelledby="step-decision"
+                tabindex="0"
+                hidden
+              >
+                <div class="panel-meta">
+                  <span>EVIDENCE → HUMAN DECISION</span
+                  ><span class="pill warning">Admission blocked</span>
+                </div>
+                <h3 class="panel-title">
+                  The agent can propose.<br />The reviewer holds the decision.
+                </h3>
+                <div class="decision-reason">
+                  <span class="decision-icon" aria-hidden="true">!</span>
+                  <div>
+                    <b>Not ready to approve</b>
+                    <p>
+                      The access-policy question is unresolved and current
+                      evidence is missing.
+                    </p>
+                  </div>
+                </div>
+                <div class="decision-options">
+                  <span>Request a rebase</span
+                  ><span>Record a bounded waiver*</span
+                  ><span>Reject the proposal</span>
+                </div>
+                <p class="panel-note">
+                  * Only where policy permits. Every decision records its actor,
+                  rationale, scope, and exact project version.
+                </p>
+              </section>
+            </div>
+          </div>
+          <div class="demo-footer">
+            <span
+              ><i class="status-dot" aria-hidden="true"></i>Shared state.
+              Traceable evidence. Human authority.</span
+            ><button type="button" class="next-step" data-next-step>
+              Next: inspect the change <span aria-hidden="true">→</span>
+            </button>
           </div>
         </div>
-        <div class="citation-block reveal">
-          <div class="citation-header">
-            <h3>BibTeX</h3>
-            <button class="small-button" type="button" data-copy-bib>Copy</button>
+        <p class="figure-note">
+          A simplified walkthrough of the capability-migration scenario. These
+          are illustrative states, not a live repository or a measured result.
+        </p>
+      </section>
+
+      <section
+        class="concept wrap section-space"
+        id="layer"
+        aria-labelledby="concept-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">02 / The consensus layer</p>
+          <h2 id="concept-title">
+            A shared understanding.<br /><em>With a version history.</em>
+          </h2>
+          <p>
+            Each proposal changes a project state. The consensus layer keeps
+            four parts connected, so a reviewer can see what the change means
+            before authorizing it.
+          </p>
+        </div>
+        <div
+          class="state-model"
+          role="group"
+          aria-label="Four parts of the versioned project state"
+        >
+          <article>
+            <span class="state-symbol">I<sup>t</sup></span>
+            <div>
+              <h3>Intent</h3>
+              <p>
+                What was asked, what was ambiguous, and which interpretation was
+                selected.
+              </p>
+            </div>
+            <span class="state-verb">Clarify</span>
+          </article>
+          <article class="state-highlight">
+            <span class="state-symbol">C<sup>t</sup></span>
+            <div>
+              <h3>Commitments</h3>
+              <p>
+                The interfaces, dependencies, and rules the project has agreed
+                to preserve.
+              </p>
+            </div>
+            <span class="state-verb">Agree</span>
+          </article>
+          <article>
+            <span class="state-symbol">A<sup>t</sup></span>
+            <div>
+              <h3>Artifacts</h3>
+              <p>
+                The exact code, configuration, and revisions that implement
+                those commitments.
+              </p>
+            </div>
+            <span class="state-verb">Inspect</span>
+          </article>
+          <article>
+            <span class="state-symbol">E<sup>t</sup></span>
+            <div>
+              <h3>Evidence</h3>
+              <p>
+                What was checked, what it supports, and whether it still applies
+                to this version.
+              </p>
+            </div>
+            <span class="state-verb">Verify</span>
+          </article>
+        </div>
+        <div class="concept-bottom">
+          <p>
+            <strong>Consensus means an authorized project state.</strong>
+            Disagreements, uncertainty, and scoped exceptions remain visible.
+          </p>
+          <p>
+            Realization (Φ) links a selected change to implementation.
+            Rehydration (Ψ) reads the resulting artifacts back into the model
+            and records the gaps.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="workspace-section section-space"
+        id="workspace"
+        aria-labelledby="workspace-title"
+      >
+        <div class="wrap">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">03 / The working system</p>
+              <h2 id="workspace-title">Meet <em>Consensus Control.</em></h2>
+            </div>
+            <p>
+              A local-first review workspace for agent-submitted changes. Start
+              with the commitment, inspect its source, and see which evidence is
+              still needed.
+            </p>
           </div>
-          <pre><code id="bibtex">@misc{wang2026agenticconsensus,
-  title = {Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer},
-  author = {Wang, Tianfu and Hao, Zhezheng and Wu, Yin and Wu, Wei and Lin, Qiang and Dong, Hande and Yuan, Nicholas Jing and Xiong, Hui},
+          <div class="workspace-showcase" data-tabs>
+            <div class="showcase-toolbar">
+              <div
+                class="showcase-tabs"
+                role="tablist"
+                aria-label="Workspace views"
+              >
+                <button
+                  id="view-commitments"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="screen-commitments"
+                  tabindex="0"
+                >
+                  Shared meaning</button
+                ><button
+                  id="view-map"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="screen-map"
+                  tabindex="-1"
+                >
+                  Change map</button
+                ><button
+                  id="view-decision"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="screen-decision"
+                  tabindex="-1"
+                >
+                  Decision brief
+                </button>
+              </div>
+              <span class="capture-label">Development workspace captures</span>
+            </div>
+            <div
+              id="screen-commitments"
+              class="screen-panel"
+              role="tabpanel"
+              aria-labelledby="view-commitments"
+              tabindex="0"
+            >
+              <a
+                class="screenshot-link"
+                href="./assets/workspace.png"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open full-size shared meaning workspace screenshot"
+                ><img
+                  src="./assets/workspace.png"
+                  width="1440"
+                  height="1000"
+                  alt="Consensus Control connects a proposed question-reset commitment to three version-pinned source readings. The interface is English; the project's authored commitments are in Chinese."
+                  loading="lazy"
+                /><span class="image-expand">View full size ↗</span></a
+              >
+              <p class="screen-caption">
+                <b>Read the meaning alongside the implementation.</b> Authored
+                readings point to version-pinned source code. They remain
+                separate from behavioral verification.
+              </p>
+            </div>
+            <div
+              id="screen-map"
+              class="screen-panel"
+              role="tabpanel"
+              aria-labelledby="view-map"
+              tabindex="0"
+              hidden
+            >
+              <a
+                class="screenshot-link"
+                href="./assets/change-map.png"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open full-size change map screenshot"
+                ><img
+                  src="./assets/change-map.png"
+                  width="2484"
+                  height="1698"
+                  alt="A real review change map groups 17 files by directory, with evidence records and tests marked not run. Tile area represents changed lines, not risk."
+                  loading="lazy"
+                /><span class="image-expand">View full size ↗</span></a
+              >
+              <p class="screen-caption">
+                <b>Get the shape of a change before opening each file.</b> Tile
+                area represents changed lines, not risk. Recorded evidence and
+                missing checks stay distinguishable.
+              </p>
+            </div>
+            <div
+              id="screen-decision"
+              class="screen-panel"
+              role="tabpanel"
+              aria-labelledby="view-decision"
+              tabindex="0"
+              hidden
+            >
+              <div class="decision-screen">
+                <span class="eyebrow">The decision follows the evidence</span
+                ><a
+                  class="screenshot-link"
+                  href="./assets/decision.png"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Open full-size decision brief screenshot"
+                  ><img
+                    src="./assets/decision.png"
+                    width="2484"
+                    height="369"
+                    alt="Not ready to approve. Approval is blocked by tests that have not run and three missing evidence records."
+                    loading="lazy"
+                /></a>
+                <p>
+                  Three linked claims. Three unmet evidence obligations. The
+                  recorded walkthrough keeps approval disabled until the
+                  requirements are resolved.
+                </p>
+              </div>
+              <p class="screen-caption">
+                <b>See what prevents approval, and what to inspect next.</b> A
+                source reading or an AI answer does not grant decision
+                authority.
+              </p>
+            </div>
+          </div>
+          <div class="workspace-details">
+            <p>
+              <strong>Runs locally.</strong> Screenshots show the current
+              development workspace. GitHub import is read-only. AI assistance
+              is optional and advisory. Python import analysis and one bounded
+              import-substitution round trip are implemented.
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/GeminiLight/agentic-consensus#quick-start"
+              >Run the workspace <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="research wrap section-space"
+        id="research"
+        aria-labelledby="research-title"
+      >
+        <div class="paper-main">
+          <p class="eyebrow">04 / The research</p>
+          <h2 id="research-title">
+            Scaling Human-AI Coding Collaboration Requires a
+            <em>Governable Consensus Layer.</em>
+          </h2>
+          <p class="paper-position">
+            A position on how shared project state can preserve human
+            understanding and control as agent contributions accumulate.
+          </p>
+          <div class="authors">
+            Tianfu Wang<sup>1</sup>, Zhezheng Hao<sup>2</sup>, Yin
+            Wu<sup>1</sup>, Wei Wu<sup>1</sup>, Qiang Lin<sup>3</sup>, Hande
+            Dong<sup>3,*</sup>, Nicholas Jing Yuan<sup>1</sup>, Hui Xiong<sup
+              >1,*</sup
+            >
+          </div>
+          <p class="affiliations">
+            <sup>1</sup> HKUST (Guangzhou) &nbsp; <sup>2</sup> Zhejiang
+            University &nbsp; <sup>3</sup> Tencent<br /><span
+              >* Corresponding authors</span
+            >
+          </p>
+          <div class="paper-actions">
+            <a class="button primary" href="https://arxiv.org/abs/2604.17883"
+              >Read on arXiv <span aria-hidden="true">↗</span></a
+            ><a
+              class="button secondary"
+              href="https://www.alphaxiv.org/abs/2604.17883"
+              >Read on alphaXiv <span aria-hidden="true">↗</span></a
+            ><a class="text-link" href="#citation">Cite this work ↓</a>
+          </div>
+          <p class="paper-version">
+            arXiv:2604.17883 · This page reflects our current research and
+            implementation. An updated arXiv version is coming soon.
+          </p>
+          <details class="abstract">
+            <summary>
+              Current research summary <span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Vibe coding turns natural-language intent into working software,
+              but code generation alone does not give humans and agents a shared
+              account of what they are building. As collaboration spans
+              participants, components, and releases, design choices must remain
+              understandable and open to revision. We argue that scaling human
+              and AI coding collaboration requires a governable consensus layer.
+              <strong>Agentic Consensus</strong> organizes collaboration around
+              a versioned project-state model linking selected intent,
+              structural commitments, executable artifacts, and evidence.
+              Participants can clarify intent before implementation and
+              coordinate proposed changes against commitments that humans can
+              inspect and revise. Bidirectional synchronization connects
+              intended changes to implementation and exposes conflicts or stale
+              evidence as artifacts evolve. We implemented its review workflow
+              in Consensus Control. Our research agenda asks how shared project
+              state can preserve human understanding and control as agent
+              contributions accumulate.
+            </p>
+          </details>
+        </div>
+        <aside
+          class="research-note"
+          id="evaluation"
+          aria-labelledby="study-title"
+        >
+          <span class="eyebrow">The research agenda</span>
+          <h3 id="study-title">What should better review make possible?</h3>
+          <div class="research-questions">
+            <div>
+              <span>01</span>
+              <p>
+                <b>Understand the commitment.</b> Identify what a proposed
+                change must preserve.
+              </p>
+            </div>
+            <div>
+              <span>02</span>
+              <p>
+                <b>Judge the evidence.</b> Check whether it is sufficient for
+                this artifact version.
+              </p>
+            </div>
+            <div>
+              <span>03</span>
+              <p>
+                <b>Keep decisions accountable.</b> Choose a policy-compatible
+                action with the right authority.
+              </p>
+            </div>
+          </div>
+          <p class="study-limit">
+            Our planned evaluation compares native review, a governance ledger,
+            and relational project-state review. Their comparative benefits
+            remain an open research question.
+          </p>
+        </aside>
+      </section>
+
+      <section class="start-section" id="start" aria-labelledby="start-title">
+        <div class="wrap start-grid">
+          <div>
+            <p class="eyebrow">05 / Try it on your machine</p>
+            <h2 id="start-title">
+              From the idea<br />to <em>your review desk.</em>
+            </h2>
+            <p>
+              Start with the synthetic capability-migration scenario. Then
+              import a GitHub pull request or compare two local Git revisions.
+            </p>
+            <div class="requirements">
+              <span>Python 3.11+</span><span>Git</span><span>uv</span>
+            </div>
+            <a
+              class="text-link"
+              href="https://github.com/GeminiLight/agentic-consensus#quick-start"
+              >Full setup &amp; configuration
+              <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span>Fresh installation / terminal</span
+              ><button
+                class="copy-button"
+                type="button"
+                data-copy="quickstart"
+                hidden
+              >
+                Copy commands
+              </button>
+            </div>
+            <pre
+              tabindex="0"
+              aria-label="Local installation commands"
+            ><code id="quickstart">git clone https://github.com/GeminiLight/agentic-consensus.git
+cd agentic-consensus
+uv venv .venv
+uv pip install --python .venv/bin/python -e '.[dev]'
+.venv/bin/agentic-consensus demo
+.venv/bin/agentic-consensus serve</code></pre>
+            <div class="terminal-note">
+              Open <code>http://127.0.0.1:8765</code> and create the local
+              administrator.<br />For the seeded demo, use audit identity
+              <code>security-lead@example.test</code>.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="resources wrap section-space"
+        id="resources"
+        aria-labelledby="resources-title"
+      >
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">06 / Go deeper</p>
+            <h2 id="resources-title">One project. <em>Open paths in.</em></h2>
+          </div>
+          <p>
+            Read the argument, inspect the implementation, or contribute to the
+            project.
+          </p>
+        </div>
+        <div class="resource-list">
+          <a href="https://arxiv.org/abs/2604.17883"
+            ><span class="resource-index">01</span
+            ><span
+              ><b>The paper</b
+              ><small
+                >The public preprint · updated version coming soon</small
+              ></span
+            ><span class="resource-kind">arXiv:2604.17883</span
+            ><span class="resource-arrow" aria-hidden="true">↗</span></a
+          ><a href="https://github.com/GeminiLight/agentic-consensus"
+            ><span class="resource-index">02</span
+            ><span
+              ><b>The implementation</b
+              ><small
+                >Consensus Control · source, setup, and contributions</small
+              ></span
+            ><span class="resource-kind">GitHub / Apache-2.0</span
+            ><span class="resource-arrow" aria-hidden="true">↗</span></a
+          ><a href="https://github.com/GeminiLight/agentic-consensus-site"
+            ><span class="resource-index">03</span
+            ><span
+              ><b>The project website</b
+              ><small
+                >This page · design, walkthrough, and public resources</small
+              ></span
+            ><span class="resource-kind">GitHub</span
+            ><span class="resource-arrow" aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="citation" id="citation">
+          <div class="citation-heading">
+            <h3>Cite the arXiv preprint</h3>
+            <button class="copy-button" type="button" data-copy="bibtex" hidden>
+              Copy BibTeX
+            </button>
+          </div>
+          <pre
+            tabindex="0"
+            aria-label="BibTeX citation"
+          ><code id="bibtex">@misc{wang2026scalinghumanaicodingcollaboration,
+  title = {Scaling Human-AI Coding Collaboration
+           Requires a Governable Consensus Layer},
+  author = {Wang, Tianfu and Hao, Zhezheng and Wu, Yin and Wu, Wei
+            and Lin, Qiang and Dong, Hande and Yuan, Nicholas Jing
+            and Xiong, Hui},
   year = {2026},
-  note = {Submitted to KDD 2026 Blue Sky Track}
+  eprint = {2604.17883},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SE},
+  url = {https://arxiv.org/abs/2604.17883}
 }</code></pre>
         </div>
       </section>
 
-      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
-        <div class="section-header section-header-centered reveal">
-          <p class="section-kicker">FAQ</p>
-          <h2 id="faq-title">Quick answers for readers and AI research assistants.</h2>
+      <section class="faq wrap" id="faq" aria-labelledby="faq-title">
+        <div>
+          <p class="eyebrow">A few useful distinctions</p>
+          <h2 id="faq-title">Before you <em>dive in.</em></h2>
         </div>
-        <div class="faq-grid">
-          <article class="faq-item reveal">
-            <h3>What is Agentic Consensus?</h3>
-            <p>It is a proposed paradigm where a governable consensus layer C becomes the primary artifact of AI-assisted engineering.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>What problem does it address?</h3>
-            <p>It addresses the representation gap created when generated code passes tests but hides assumptions, dependencies, and evidence.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>What is the key technical object?</h3>
-            <p>C is modeled as a typed property graph with synchronized projections, evidence links, and round-trip artifact correspondence.</p>
-          </article>
+        <div class="faq-list">
+          <details>
+            <summary>
+              Is consensus a vote between agents?<span aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              Consensus means the currently authorized, versioned project state.
+              It can contain contested claims and scoped waivers. Human or
+              policy-defined authority determines which changes are admitted;
+              agreement between agents does not establish truth or grant
+              permission.
+            </p>
+          </details>
+          <details>
+            <summary>
+              How does this relate to code review?<span aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              It adds project-state review: which commitments a patch changes,
+              which interpretation led to it, and whether the evidence still
+              applies. Diffs, tests, and existing review practices remain useful
+              and are linked to that shared context.
+            </p>
+          </details>
+          <details>
+            <summary>
+              What can I run today?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Consensus Control is an authenticated local review workspace with
+              read-only GitHub PR import, commitment and source inspection,
+              evidence requirements, and authorized decisions. Automated source
+              analysis covers Python imports. Its executable realization path is
+              bounded to a single Python import substitution; the broader
+              research agenda is not a claim of general code synthesis.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Does approval merge my GitHub pull request?<span
+                aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              No. The GitHub connection is read-only. A decision updates local
+              governed project state and its audit history. It does not push
+              code or merge, create, or delete a GitHub pull request.
+            </p>
+          </details>
         </div>
       </section>
+      <section class="closing wrap">
+        <p>More capable agents.<br /><em>More legible collaboration.</em></p>
+        <a
+          class="button primary"
+          href="https://github.com/GeminiLight/agentic-consensus"
+          >Explore the source <span aria-hidden="true">↗</span></a
+        >
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <p>Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer.</p>
-      <a href="#top">Back to top</a>
+    <footer class="site-footer wrap">
+      <a class="brand" href="#top"
+        ><img src="./assets/mark.svg" width="28" height="28" alt="" /><span
+          >Agentic Consensus</span
+        ></a
+      ><span>Research in progress. Built for shared understanding.</span>
+      <div>
+        <a href="./llms.txt">Text summary</a><a href="#top">Back to top ↑</a>
+      </div>
     </footer>
-
-    <div class="toast" role="status" aria-live="polite" data-toast>Copied BibTeX</div>
-    <script src="./script.js"></script>
+    <div
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      data-toast
+    ></div>
   </body>
 </html>

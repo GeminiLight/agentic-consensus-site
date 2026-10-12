@@ -1,0 +1,12 @@
+{
+  "address": "http://127.0.0.1:8924",
+  "checks": [
+    "No horizontal overflow at 320, 375, 390, 768, 1024, and 1440px",
+    "Walkthrough tabs expose the intended content and only one panel",
+    "Tab arrow keys, Home and End move focus and selection",
+    "All real workspace views and full-size image links work",
+    "Mobile navigation opens, dismisses with Escape, and follows anchors",
+    "Copy success reports the exact citation; failure selects text honestly",
+    "All demo panels remain within the page at 320px"
+  ]
+}
