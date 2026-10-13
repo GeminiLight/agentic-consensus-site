@@ -4,7 +4,7 @@ const { execFileSync } = require("node:child_process");
 const { mkdirSync, writeFileSync } = require("node:fs");
 const { resolve } = require("node:path");
 const address = process.argv[2] || "http://127.0.0.1:8924";
-const session = "consensus-showcase-check";
+const session = "consensus-motion-check";
 const command = (...args) =>
   execFileSync("agent-browser", ["--session", session, ...args], {
     encoding: "utf8",
@@ -44,7 +44,7 @@ const check = (name, fn) => {
   checks.push(name);
   console.log("PASS " + name);
 };
-const out = resolve(__dirname, "../docs/qa/refinement-2026-10-13");
+const out = resolve(__dirname, "../docs/qa/motion-2026-10-13");
 const settled = () =>
   b(
     "wait",
@@ -216,6 +216,7 @@ try {
           "false",
         );
         b("press", "Escape");
+        b("wait", "--fn", '!document.querySelector(".image-dialog").open');
         assert.equal(ev('document.querySelector(".image-dialog").open'), false);
         assert.equal(ev("document.body.style.overflow"), "");
         assert.equal(
@@ -233,10 +234,12 @@ try {
       b("click", ".menu-toggle");
       assert.equal(ev('document.querySelector("#mobile-nav").hidden'), false);
       b("press", "Escape");
+      b("wait", "--fn", 'document.querySelector("#mobile-nav").hidden');
       assert.equal(ev('document.querySelector("#mobile-nav").hidden'), true);
       assert.equal(ev("document.activeElement.className"), "menu-toggle");
       b("click", ".menu-toggle");
       b("click", '#mobile-nav a[href="#research"]');
+      b("wait", "--fn", 'document.querySelector("#mobile-nav").hidden');
       assert.equal(ev('document.querySelector("#mobile-nav").hidden'), true);
       assert.equal(ev("location.hash"), "#research");
     },
@@ -347,6 +350,47 @@ try {
       );
     },
   );
+  check("Rapid changes settle to the final tab with a correctly sized selection marker", () => {
+    b("set", "media", "light");
+    for (const width of [390, 1440]) {
+      b("set", "viewport", String(width), "1000");
+      ev(`(() => { for (const name of ['change','decision','intent','evidence']) document.querySelector('#step-' + name).click(); return true; })()`);
+      settled();
+      assert.equal(ev('document.querySelector("#step-evidence").getAttribute("aria-selected")'), "true");
+      assert.equal(ev('document.querySelectorAll(".demo-panel:not([hidden])").length'), 1);
+      assert.equal(ev('document.querySelector(".demo-tabs").getAttribute("aria-orientation")'), width < 601 ? "horizontal" : "vertical");
+      assert.ok(ev(`(() => { const list = document.querySelector('.demo-tabs'), tab = document.querySelector('#step-evidence'); return Math.abs(parseFloat(list.style.getPropertyValue('--indicator-width')) - tab.offsetWidth) < 1; })()`));
+      assert.equal(ev('document.querySelector(".demo-content").style.height'), "");
+    }
+    b("click", "#view-decision");
+    settled();
+    assert.ok(ev(`(() => { const host = document.querySelector('.showcase-content'); return Math.abs(host.getBoundingClientRect().height - host.querySelector(':scope > .screen-panel:not([hidden])').getBoundingClientRect().height) < 2; })()`));
+  });
+  check("Disclosures animate both ways, recover from rapid toggles, and retain native final state", () => {
+    b("click", ".faq-list details:first-child summary");
+    settled();
+    assert.equal(ev('document.querySelector(".faq-list details").open'), true);
+    b("click", ".faq-list details:first-child summary");
+    b("wait", "--fn", '!document.querySelector(".faq-list details").open');
+    ev(`(() => { const summary = document.querySelector('.faq-list summary'); summary.click(); summary.click(); summary.click(); return true; })()`);
+    settled();
+    assert.equal(ev('document.querySelector(".faq-list details").open'), true);
+    assert.equal(ev('document.querySelector(".faq-list details").classList.contains("is-resizing")'), false);
+  });
+  check("The review trace plays once, can replay, stops off screen, and respects reduced motion", () => {
+    b("open", address);
+    b("wait", "--fn", 'document.querySelector(".hero-trace").classList.contains("is-playing")');
+    b("wait", "--fn", 'document.querySelector("[data-trace-count]").textContent === "02 / 04"');
+    b("wait", "--fn", '!document.querySelector(".hero-trace").classList.contains("is-playing")');
+    b("click", "[data-replay-trace]");
+    assert.equal(ev('document.querySelector(".hero-trace").classList.contains("is-playing")'), true);
+    ev('document.querySelector("#research").scrollIntoView({behavior:"instant"}); true');
+    b("wait", "--fn", '!document.querySelector(".hero-trace").classList.contains("is-playing")');
+    b("set", "media", "light", "reduced-motion");
+    b("open", address);
+    assert.equal(ev('document.querySelector(".hero-trace").classList.contains("is-playing")'), false);
+    assert.equal(ev('getComputedStyle(document.querySelector("[data-replay-trace]")).display'), "none");
+  });
   check(
     "WCAG A/AA automated scans pass for all steps and the image viewer",
     () => {

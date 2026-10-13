@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#f7f7f2" />
     <link
       rel="canonical"
-      href="https://tianfuwang.tech/agentic-consensus-site/"
+      href="https://tianfuwang.tech/agentic-consensus/"
     />
     <link rel="icon" href="./assets/mark.svg" type="image/svg+xml" />
     <link
@@ -50,8 +50,8 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261013-credits" />
-    <script src="./script.js?v=20261013-r2" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20261013-motion" />
+    <script src="./script.js?v=20261013-motion" defer></script>
     <noscript
       ><style>
         .demo-panel[hidden],
@@ -97,11 +97,11 @@
     />
     <meta
       property="og:url"
-      content="https://tianfuwang.tech/agentic-consensus-site/"
+      content="https://tianfuwang.tech/agentic-consensus/"
     />
     <meta
       property="og:image"
-      content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png?v=20261013-r2"
+      content="https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-og.png?v=20261013-r2"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -120,7 +120,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://tianfuwang.tech/agentic-consensus-site/assets/agentic-consensus-og.png?v=20261013-r2"
+      content="https://tianfuwang.tech/agentic-consensus/assets/agentic-consensus-og.png?v=20261013-r2"
     />
     <meta
       name="citation_title"
@@ -139,7 +139,7 @@
     <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2604.17883" />
     <meta
       name="citation_fulltext_html_url"
-      content="https://tianfuwang.tech/agentic-consensus-site/"
+      content="https://tianfuwang.tech/agentic-consensus/"
     />
     <script type="application/ld+json">
       {
@@ -147,14 +147,14 @@
         "@graph": [
           {
             "@type": "WebSite",
-            "@id": "https://tianfuwang.tech/agentic-consensus-site/#website",
+            "@id": "https://tianfuwang.tech/agentic-consensus/#website",
             "name": "Agentic Consensus",
-            "url": "https://tianfuwang.tech/agentic-consensus-site/",
+            "url": "https://tianfuwang.tech/agentic-consensus/",
             "inLanguage": "en"
           },
           {
             "@type": "ScholarlyArticle",
-            "@id": "https://tianfuwang.tech/agentic-consensus-site/#paper",
+            "@id": "https://tianfuwang.tech/agentic-consensus/#paper",
             "headline": "Scaling Human-AI Coding Collaboration Requires a Governable Consensus Layer",
             "description": "A research preprint on a governable consensus layer for human-AI coding collaboration.",
             "datePublished": "2026-04-20",
@@ -165,7 +165,7 @@
             ],
             "inLanguage": "en",
             "isAccessibleForFree": true,
-            "url": "https://tianfuwang.tech/agentic-consensus-site/#research",
+            "url": "https://tianfuwang.tech/agentic-consensus/#research",
             "encoding": {
               "@type": "MediaObject",
               "contentUrl": "https://arxiv.org/pdf/2604.17883",
@@ -254,7 +254,7 @@
             </h1>
             <p class="hero-description">
               See what an agent’s change means for your project. Connect the
-              intent, code, and evidence—then make the call.
+              intent, code, and evidence. Make an informed decision.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="#walkthrough"
@@ -278,7 +278,7 @@
           >
             <div class="trace-heading">
               <span class="eyebrow">One change. The whole context.</span
-              ><span class="trace-window" aria-hidden="true">↗</span>
+              ><button class="trace-replay" type="button" data-replay-trace hidden aria-label="Replay the illustrative review trace"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1.5 7M4 4v6h6"/></svg><span>Replay</span></button>
             </div>
             <div class="trace-nodes">
               <a class="trace-node" href="#walkthrough" data-jump-step="intent">
@@ -324,29 +324,27 @@
                 ><span class="trace-arrow" aria-hidden="true">↗</span>
               </a>
             </div>
-            <p class="trace-caption">
-              <span class="status-dot" aria-hidden="true"></span>Illustrative
-              scenario <span>Explore any step ↗</span>
-            </p>
+            <div class="trace-playback" aria-hidden="true"><span data-trace-status>Intent → change → evidence → decision</span><span class="trace-time" data-trace-count>04 / 04</span><div class="trace-timeline"><span></span></div></div>
+            <p class="trace-caption">Illustrative scenario <span>Explore any step ↗</span></p>
           </div>
         </div>
         <div class="hero-credits" role="group" aria-label="Research team">
-          <div>
-            <p class="eyebrow">Research by</p>
-            <p class="hero-authors">
-              <span>Tianfu Wang</span>, <span>Zhezheng Hao</span>,
-              <span>Yin Wu</span>, <span>Wei Wu</span>, <span>Qiang Lin</span>,
-              <span>Hande Dong</span>, <span>Nicholas Jing Yuan</span>,
-              <span>Hui Xiong</span>
-            </p>
-            <p class="hero-institutions">
-              HKUST (Guangzhou) <span aria-hidden="true">·</span> Zhejiang
-              University <span aria-hidden="true">·</span> Tencent
-            </p>
+          <div class="credits-heading">
+            <p class="eyebrow">Behind the project</p>
+            <h2>Built on research.<br /><em>Made for collaboration.</em></h2>
           </div>
-          <a class="text-link" href="#research"
-            >Paper &amp; team <span aria-hidden="true">↘</span></a
-          >
+          <div class="credits-team">
+            <p class="hero-authors">
+              <span>Tianfu Wang<sup>1</sup></span><span>Zhezheng Hao<sup>2</sup></span>
+              <span>Yin Wu<sup>1</sup></span><span>Wei Wu<sup>1</sup></span>
+              <span>Qiang Lin<sup>3</sup></span><span>Hande Dong<sup>3</sup></span>
+              <span>Nicholas Jing Yuan<sup>1</sup></span><span>Hui Xiong<sup>1</sup></span>
+            </p>
+            <div class="credits-meta">
+              <p class="hero-institutions"><span><sup>1</sup> HKUST (Guangzhou)</span><span><sup>2</sup> Zhejiang University</span><span><sup>3</sup> Tencent</span></p>
+              <a class="text-link" href="#research">Paper &amp; team <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -719,6 +717,7 @@
               </div>
               <span class="capture-label">Actual workspace captures</span>
             </div>
+            <div class="showcase-content">
             <div
               id="screen-commitments"
               class="screen-panel"
@@ -806,6 +805,7 @@
                 decision; it cannot authorize one.
               </p>
             </div>
+          </div>
           </div>
           <div class="workspace-details">
             <p>

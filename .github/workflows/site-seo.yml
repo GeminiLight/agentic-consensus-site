@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify sitemap targets and canonical URLs
         env:
-          SITE_URL: https://tianfuwang.tech/agentic-consensus-site
-          OLD_SITE_URL: https://tianfuwang.tech/agentic-consensus/
+          SITE_URL: https://tianfuwang.tech/agentic-consensus
+          OLD_SITE_URL: https://tianfuwang.tech/agentic-consensus-site/
         run: python3 scripts/verify-site-seo.py
       - name: Verify content, metadata, and local resources
         run: python3 scripts/verify-content.py

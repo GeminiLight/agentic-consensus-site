@@ -4,7 +4,7 @@
 
 ## Public resources
 
-- [Project website](https://tianfuwang.tech/agentic-consensus-site/): overview, illustrative walkthrough, real workspace captures, paper, and setup.
+- [Project website](https://tianfuwang.tech/agentic-consensus/): overview, illustrative walkthrough, real workspace captures, paper, and setup.
 - [arXiv preprint](https://arxiv.org/abs/2604.17883)
 - [alphaXiv reader](https://www.alphaxiv.org/abs/2604.17883)
 - [Implementation](https://github.com/GeminiLight/agentic-consensus): Python and JavaScript, Apache-2.0.

@@ -23,19 +23,36 @@
       document.getAnimations().forEach((a) => a.cancel());
   });
 
+  // Animate the selection surface itself, so the control visibly follows the choice.
+  const moveIndicator = (list, selected) => {
+    if (!list || !selected) return;
+    list.classList.add("has-indicator");
+    list.style.setProperty("--indicator-x", `${selected.offsetLeft}px`);
+    list.style.setProperty("--indicator-y", `${selected.offsetTop}px`);
+    list.style.setProperty("--indicator-width", `${selected.offsetWidth}px`);
+    list.style.setProperty("--indicator-height", `${selected.offsetHeight}px`);
+  };
+
   const menuButton = document.querySelector(".menu-toggle");
   const mobileNav = document.querySelector("#mobile-nav");
   if (menuButton && mobileNav) {
     menuButton.hidden = false;
+    let menuMotion;
     const closeMenu = () => {
+      menuMotion?.cancel();
       menuButton.setAttribute("aria-expanded", "false");
-      mobileNav.hidden = true;
+      const finish = () => { mobileNav.hidden = true; };
+      menuMotion = animate(mobileNav, [{ opacity: 1, transform: "translateY(0)" }, { opacity: 0, transform: "translateY(-6px)" }], { duration: 160 });
+      if (menuMotion) { menuMotion.onfinish = finish; menuMotion.oncancel = finish; }
+      else finish();
     };
     menuButton.addEventListener("click", () => {
       const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", String(!isOpen));
-      mobileNav.hidden = isOpen;
-      if (!isOpen) enter(mobileNav, 0, -8);
+      if (isOpen) return closeMenu();
+      if (menuMotion) { menuMotion.oncancel = null; menuMotion.cancel(); }
+      menuButton.setAttribute("aria-expanded", "true");
+      mobileNav.hidden = false;
+      menuMotion = enter(mobileNav, 0, -8);
     });
     mobileNav.addEventListener("click", (event) => {
       if (event.target.closest("a")) closeMenu();
@@ -64,10 +81,40 @@
       "Next: make the decision",
       "Back to the intent",
     ];
+    const list = group.querySelector('[role="tablist"]');
+    const host = group.querySelector(".demo-content, .showcase-content");
+    let heightMotion;
     let selected = -1;
+    const positionIndicator = () => {
+      if (next) list.setAttribute("aria-orientation", innerWidth <= 600 ? "horizontal" : "vertical");
+      moveIndicator(list, tabs[selected]);
+    };
+    if ("ResizeObserver" in window) new ResizeObserver(positionIndicator).observe(list);
+    document.fonts?.ready.then(positionIndicator);
     const select = (index, focus = false) => {
       const changed = selected !== index;
       const wasInitialized = selected !== -1;
+      const direction = index > selected ? 1 : -1;
+      host.querySelectorAll(".panel-snapshot").forEach((snapshot) => snapshot.remove());
+      let snapshot;
+      if (changed && wasInitialized && !motionPreference.matches) {
+        const outgoing = panels[selected];
+        snapshot = outgoing.cloneNode(true);
+        snapshot.className = "panel-snapshot";
+        snapshot.removeAttribute("id");
+        snapshot.removeAttribute("role");
+        snapshot.removeAttribute("tabindex");
+        snapshot.removeAttribute("aria-labelledby");
+        snapshot.setAttribute("aria-hidden", "true");
+        snapshot.inert = true;
+        snapshot.querySelectorAll("[id]").forEach((el) => el.removeAttribute("id"));
+        snapshot.style.padding = getComputedStyle(outgoing).padding;
+        const quote = snapshot.querySelector("blockquote");
+        if (quote) quote.style.font = getComputedStyle(outgoing.querySelector("blockquote")).font;
+        snapshot.style.height = `${outgoing.getBoundingClientRect().height}px`;
+      }
+      const previousHeight = host.getBoundingClientRect().height;
+      heightMotion?.cancel();
       selected = index;
       tabs.forEach((tab, i) => {
         tab.setAttribute("aria-selected", String(i === index));
@@ -78,13 +125,29 @@
         "--step-progress",
         `${((index + 1) / tabs.length) * 100}%`,
       );
+      positionIndicator();
       if (changed && wasInitialized) {
-        // Stop older transitions so rapid keyboard changes never leave stale effects.
-        panels.forEach((panel) =>
-          panel.getAnimations({ subtree: true }).forEach((a) => a.cancel()),
-        );
+        // A new selection supersedes the previous one, including mid-transition.
+        panels.forEach((panel) => panel.getAnimations({ subtree: true }).forEach((a) => a.cancel()));
+        const targetHeight = panels[index].getBoundingClientRect().height;
+        if (Math.abs(targetHeight - previousHeight) > 1) {
+          host.classList.add("is-resizing");
+          heightMotion = animate(host, [{ height: `${previousHeight}px` }, { height: `${targetHeight}px` }], { duration: 380 });
+          const finish = () => host.classList.remove("is-resizing");
+          if (heightMotion) {
+            const currentMotion = heightMotion;
+            const settle = () => { if (heightMotion === currentMotion) finish(); };
+            heightMotion.onfinish = settle; heightMotion.oncancel = settle;
+          } else finish();
+        }
+        if (snapshot) {
+          host.append(snapshot);
+          const exit = animate(snapshot, [{ opacity: 1, transform: "translateX(0)" }, { opacity: 0, transform: `translateX(${-direction * 8}px)` }], { duration: 180 });
+          if (exit) { exit.onfinish = () => snapshot.remove(); exit.oncancel = () => snapshot.remove(); }
+          else snapshot.remove();
+        }
         [...panels[index].children].forEach((child, i) =>
-          enter(child, Math.min(i * 45, 180), 12),
+          animate(child, [{ opacity: 0, transform: `translateX(${direction * 14}px)` }, { opacity: 1, transform: "translateX(0)" }], { duration: 340, delay: 60 + Math.min(i * 35, 105), fill: "backwards" }),
         );
       }
       if (next) {
@@ -204,6 +267,16 @@
     const viewport = imageDialog.querySelector(".image-dialog-viewport");
     const zoomButton = imageDialog.querySelector("[data-image-zoom]");
     const closeButton = imageDialog.querySelector("[data-image-close]");
+    let dialogMotion;
+    const closeImage = () => {
+      if (imageDialog.classList.contains("is-closing")) return;
+      dialogMotion?.cancel();
+      imageDialog.classList.add("is-closing");
+      const finish = () => { imageDialog.classList.remove("is-closing"); imageDialog.close(); };
+      dialogMotion = animate(imageDialog, [{ opacity: 1, transform: "scale(1)" }, { opacity: 0, transform: "scale(.98)" }], { duration: 160 });
+      if (dialogMotion) { dialogMotion.onfinish = finish; dialogMotion.oncancel = finish; }
+      else finish();
+    };
     let imageTrigger;
     let previousOverflow;
     const resetZoom = () => {
@@ -233,7 +306,7 @@
         document.body.style.overflow = "hidden";
         imageDialog.showModal();
         closeButton.focus();
-        enter(imageDialog, 0, 16);
+        dialogMotion = animate(imageDialog, [{ opacity: 0, transform: "translateY(14px) scale(.98)" }, { opacity: 1, transform: "translateY(0) scale(1)" }], { duration: 360 });
       });
     });
     imageDialog.addEventListener("keydown", (event) => {
@@ -248,7 +321,8 @@
         zoomButton.focus();
       }
     });
-    closeButton.addEventListener("click", () => imageDialog.close());
+    closeButton.addEventListener("click", closeImage);
+    imageDialog.addEventListener("cancel", (event) => { event.preventDefault(); closeImage(); });
     imageDialog.addEventListener("click", (event) => {
       if (event.target !== imageDialog) return;
       const rect = imageDialog.getBoundingClientRect();
@@ -258,7 +332,7 @@
         event.clientY < rect.top ||
         event.clientY > rect.bottom
       )
-        imageDialog.close();
+        closeImage();
     });
     imageDialog.addEventListener("close", () => {
       document.body.style.overflow = previousOverflow;
@@ -269,15 +343,34 @@
       zoomButton.setAttribute("aria-pressed", String(zoomed));
       zoomButton.textContent = zoomed ? "Fit to screen" : "Actual size";
       viewport.scrollTo(0, 0);
+      image.getAnimations().forEach((a) => a.cancel());
+      animate(image, [{ opacity: .6 }, { opacity: 1 }], { duration: 200 });
     });
   }
 
+  // Native disclosures still work without JS; height follows the actual content.
   document.querySelectorAll("details").forEach((details) => {
-    details.addEventListener("toggle", () => {
-      if (details.open)
-        [...details.children]
-          .filter((el) => el.tagName !== "SUMMARY")
-          .forEach((el) => enter(el, 0, 8));
+    const summary = details.querySelector("summary");
+    let disclosureMotion;
+    let expanded = details.open;
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+      const start = details.getBoundingClientRect().height;
+      expanded = disclosureMotion?.playState === "running" ? !expanded : !details.open;
+      if (disclosureMotion) { disclosureMotion.oncancel = null; disclosureMotion.cancel(); }
+      details.open = expanded;
+      const end = details.getBoundingClientRect().height;
+      details.open = true;
+      details.classList.add("is-resizing");
+      details.dataset.expanded = String(expanded);
+      const finish = () => {
+        details.open = expanded;
+        details.classList.remove("is-resizing");
+        delete details.dataset.expanded;
+      };
+      disclosureMotion = animate(details, [{ height: `${start}px` }, { height: `${end}px` }], { duration: 300 });
+      if (disclosureMotion) { disclosureMotion.onfinish = finish; disclosureMotion.oncancel = finish; }
+      else finish();
     });
   });
   const openCitation = () => {
@@ -287,57 +380,90 @@
   window.addEventListener("hashchange", openCitation);
   openCitation();
 
-  // Motion is an enhancement: content is visible before JS, on errors, and in print.
-  document
-    .querySelectorAll(
-      ".hero-copy > *, .trace-heading, .trace-node, .trace-caption",
-    )
-    .forEach((element, i) => {
-      enter(
-        element,
-        Math.min(i * 65, 650),
-        element.classList.contains("trace-node") ? 20 : 14,
-      );
-    });
-  if ("IntersectionObserver" in window) {
-    const reveal = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          enter(entry.target, 0, 24);
-          reveal.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.12 },
-    );
-    document
-      .querySelectorAll(
-        ".walkthrough-intro, .review-demo, .section-heading, .state-model, .workspace-showcase, .paper-main, .research-note, .start-grid, .resource-list, .faq, .closing",
-      )
-      .forEach((element) => reveal.observe(element));
+  // A finite, replayable trace: movement explains the review order; it never auto-loops.
+  const trace = document.querySelector(".hero-trace");
+  const replay = document.querySelector("[data-replay-trace]");
+  const nodes = [...document.querySelectorAll(".trace-node")];
+  const traceStatus = document.querySelector("[data-trace-status]");
+  const traceCount = document.querySelector("[data-trace-count]");
+  let traceTimers = [];
+  const traceLabels = ["Agree on the scope", "Spot the authority mismatch", "Find the missing evidence", "Keep the decision with a human"];
+  const stopTrace = () => {
+    traceTimers.forEach(clearTimeout);
+    traceTimers = [];
+    trace.classList.remove("is-playing");
+    nodes.forEach((node) => node.classList.remove("is-tracing"));
+    trace.style.setProperty("--trace-progress", "100%");
+    traceStatus.textContent = "Intent → change → evidence → decision";
+    traceCount.textContent = "04 / 04";
+  };
+  const playTrace = () => {
+    stopTrace();
+    if (motionPreference.matches) return;
+    trace.classList.add("is-playing");
+    const step = (index) => {
+      nodes.forEach((node, i) => node.classList.toggle("is-tracing", i === index));
+      trace.style.setProperty("--trace-progress", `${(index + 1) * 25}%`);
+      traceStatus.textContent = traceLabels[index];
+      traceCount.textContent = `0${index + 1} / 04`;
+      animate(nodes[index].querySelector(".trace-index"), [{ transform: "scale(.85)" }, { transform: "scale(1.12)", offset: .45 }, { transform: "scale(1)" }], { duration: 500 });
+    };
+    step(0);
+    [1, 2, 3].forEach((index) => traceTimers.push(setTimeout(() => step(index), index * 950)));
+    traceTimers.push(setTimeout(stopTrace, 3900));
+  };
+  if (trace && replay) {
+    replay.hidden = false;
+    replay.addEventListener("click", playTrace);
+    motionPreference.addEventListener("change", stopTrace);
+    document.addEventListener("visibilitychange", () => { if (document.hidden) stopTrace(); });
+    if ("IntersectionObserver" in window) {
+      let introduced = false;
+      new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) { stopTrace(); return; }
+        if (!introduced) { introduced = true; playTrace(); }
+      }, { threshold: .35 }).observe(trace);
+    }
   }
-  const header = document.querySelector(".site-header");
-  const updateHeader = () =>
-    header.classList.toggle("is-scrolled", window.scrollY > 24);
-  window.addEventListener("scroll", updateHeader, { passive: true });
-  updateHeader();
 
-  const sections = [...document.querySelectorAll("main section[id]")];
-  const navLinks = [...document.querySelectorAll(".top-nav a")];
+  // Short, grouped entrances leave large reading surfaces steady and readable.
+  document.querySelectorAll(".hero-copy > *").forEach((element, i) => enter(element, i * 65, 12));
   if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          navLinks.forEach((link) => {
-            if (link.hash === "#" + entry.target.id)
-              link.setAttribute("aria-current", "location");
-            else link.removeAttribute("aria-current");
-          });
-        });
-      },
-      { rootMargin: "-12% 0px -65% 0px" },
-    );
-    sections.forEach((section) => observer.observe(section));
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const children = entry.target.matches(".state-model, .resource-list, .hero-authors")
+          ? [...entry.target.children] : [entry.target];
+        children.forEach((child, i) => enter(child, i * 65, 14));
+        reveal.unobserve(entry.target);
+      });
+    }, { threshold: .15 });
+    document.querySelectorAll(".walkthrough-intro > *, .section-heading > *, .credits-heading, .hero-authors, .state-model, .paper-main > h2, .research-note, .start-grid > *, .resource-list, .closing h2").forEach((element) => reveal.observe(element));
   }
+
+  const header = document.querySelector(".site-header");
+  const nav = document.querySelector(".top-nav");
+  const navLinks = [...nav.querySelectorAll("a")];
+  const navSections = navLinks.map((link) => document.querySelector(link.hash));
+  let scrollFrame;
+  const updateHeader = () => {
+    scrollFrame = null;
+    header.classList.toggle("is-scrolled", scrollY > 24);
+    const distance = document.documentElement.scrollHeight - innerHeight;
+    header.style.setProperty("--reading-progress", distance > 0 ? scrollY / distance : 0);
+    let active = -1;
+    navSections.forEach((section, i) => { if (section.getBoundingClientRect().top <= 220) active = i; });
+    navLinks.forEach((link, i) => {
+      if (i === active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+    nav.classList.toggle("has-current", active >= 0);
+    if (active >= 0) moveIndicator(nav, navLinks[active]);
+  };
+  const scheduleHeader = () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateHeader); };
+  window.addEventListener("scroll", scheduleHeader, { passive: true });
+  window.addEventListener("resize", scheduleHeader);
+  if ("ResizeObserver" in window) new ResizeObserver(scheduleHeader).observe(document.body);
+  document.fonts?.ready.then(scheduleHeader);
+  updateHeader();
 })();
