@@ -1,0 +1,4 @@
+# AgenticConsensus website moved
+
+The only official website is https://tianfuwang.tech/AgenticConsensus/
+Source: https://github.com/GeminiLight/AgenticConsensus/tree/main/website

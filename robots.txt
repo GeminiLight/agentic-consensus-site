@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://tianfuwang.tech/agentic-consensus/sitemap.xml
+Sitemap: https://tianfuwang.tech/AgenticConsensus/sitemap.xml

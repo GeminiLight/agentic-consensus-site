@@ -1,5 +1,7 @@
 {
   "source": "GeminiLight/agentic-consensus-site",
   "commit": "be10d658e9347b050179367156ac3c3c18276838",
-  "target": "legacy"
+  "target": "legacy",
+  "retired": true,
+  "canonical": "https://tianfuwang.tech/AgenticConsensus/"
 }
