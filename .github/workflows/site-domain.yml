@@ -1,0 +1,20 @@
+name: Site domain checks
+on:
+  pull_request:
+    branches: [legacy-redirect]
+  push:
+    branches: [legacy-redirect]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical, sitemap and retired-host URLs
+        env:
+          SITE_URL: https://tianfu.wang/AgenticConsensus/
+          SITE_DIR: .
+          REDIRECT_SITE: "true"
+        run: python3 scripts/verify-domain.py
